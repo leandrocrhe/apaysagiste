@@ -1,0 +1,41 @@
+:root {
+  --font-barlow: 'Barlow', sans-serif;
+  --font-opensans: 'Open Sans', sans-serif;
+  --font-poppins: 'Poppins', sans-serif;
+  --font-prata: 'Prata', serif;
+}
+*, *::after, *::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Open Sans", sans-serif;
+}
+
+.container {
+  width: 100%;
+  max-width: 95%;
+  margin: 0 auto;
+}
+
+h1, h2, h3 {
+  font-family: "Barlow", sans-serif;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+}
+
+.btn {
+  padding: 10px 15px;
+  color: white;
+  background-color: grey;
+}
+
+/*# sourceMappingURL=main.css.map */
