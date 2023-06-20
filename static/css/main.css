@@ -1,27 +1,53 @@
-:root {
-  --font-barlow: 'Barlow', sans-serif;
-  --font-opensans: 'Open Sans', sans-serif;
-  --font-poppins: 'Poppins', sans-serif;
-  --font-prata: 'Prata', serif;
-}
-*, *::after, *::before {
-  margin: 0;
-  padding: 0;
+html {
+  font-size: 62.5%;
   box-sizing: border-box;
 }
 
+*, *::after, *::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
 body {
+  font-size: 1.6rem;
   font-family: "Open Sans", sans-serif;
+  position: relative;
 }
 
 .container {
-  width: 100%;
-  max-width: 95%;
+  max-width: 120rem;
+  width: 95%;
   margin: 0 auto;
 }
 
 h1, h2, h3 {
   font-family: "Barlow", sans-serif;
+}
+
+h1 {
+  font-size: 4rem;
+}
+h1 span {
+  font-weight: 400;
+  color: #d6d5d5;
+}
+
+h2 {
+  font-size: 3.6rem;
+  font-weight: 400;
+}
+h2 span {
+  font-weight: 700;
+  color: #18A5BF;
+}
+
+h3 {
+  font-size: 3rem;
+}
+
+li {
+  list-style: none;
 }
 
 a {
@@ -38,4 +64,97 @@ img {
   background-color: grey;
 }
 
-/*# sourceMappingURL=main.css.map */
+.btn_top {
+  position: fixed;
+  right: 30px;
+  bottom: 30px;
+  width: 40px;
+  height: 40px;
+  padding: 10px;
+  border-radius: 50%;
+  background-color: grey;
+}
+.btn_top:hover {
+  background-color: black;
+}
+.btn_top svg {
+  fill: white;
+}
+
+.nav {
+  width: 100%;
+  padding: 5px 5%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  justify-content: space-between;
+  align-items: center;
+  display: flex;
+}
+
+.nav_logo {
+  width: 200px;
+  display: flex;
+}
+.nav_logo img {
+  width: 200px;
+}
+
+.nav_menu {
+  margin: 19px 0;
+  position: relative;
+  display: none;
+}
+.nav_menu li a {
+  display: block;
+  width: 100%;
+  height: 100%;
+  padding: 10px 15px;
+  color: white;
+}
+.nav_menu li a:hover {
+  background-color: black;
+}
+.nav_menu li ul li {
+  position: absolute;
+}
+
+.nav_menu-visible {
+  width: 260px;
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 55px;
+  right: 0;
+  background-color: grey;
+}
+
+.nav_toggle {
+  display: inline-block;
+}
+.nav_toggle svg {
+  stroke: white;
+}
+
+@media (min-width: 615px) {
+  .nav {
+    display: block;
+  }
+  .nav_menu {
+    display: flex;
+    justify-content: space-between;
+  }
+  .nav_toggle {
+    display: none;
+  }
+}
+@media (min-width: 850px) {
+  .nav {
+    display: flex;
+  }
+}
+@media (min-width: 930px) {
+  .nav {
+    padding: 5px 8%;
+  }
+}/*# sourceMappingURL=main.css.map */

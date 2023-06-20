@@ -1,0 +1,95 @@
+.nav {
+  width: 100%;
+  padding: 5px 5%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  justify-content: space-between;
+  align-items: center;
+  display: flex;
+  // background-color: grey;
+
+}
+
+.nav_logo {
+  width: 200px;
+  display: flex;
+
+  img {
+    width: 200px;
+  }
+}
+
+.nav_menu {
+  margin: 19px 0;
+  position: relative;
+  display: none;
+
+  li {    
+    a {
+      display: block;
+      width: 100%;
+      height: 100%;
+      padding: 10px 15px;
+      color: white;
+
+      &:hover {
+          background-color: black;
+      }
+    } // a
+
+    ul {
+      li {
+        position: absolute;
+      }
+    } // ul
+  }   // li
+}     // nav_menu
+
+.nav_menu-visible {
+  width: 260px;
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 55px;
+  right: 0;
+  background-color: grey;
+}
+
+
+.nav_toggle {
+  display: inline-block;
+  
+  svg {
+    stroke: white;
+  }
+}
+
+// Aplica el media queri hasta llegar a ese ancho,
+// Cuando llega aplica los estilos que esta fuera
+
+@media (min-width: 615px) {
+  .nav {
+    display: block;
+  }
+  .nav_menu {
+    display: flex;
+    justify-content: space-between;
+  }
+  .nav_toggle {
+    display: none;
+  }
+}
+
+@media (min-width: 850px) {
+  .nav {
+    display: flex;
+  }
+}
+
+@media (min-width: 930px) {
+  .nav {
+    padding: 5px 8%;
+    // background-color: brown;
+  }
+}

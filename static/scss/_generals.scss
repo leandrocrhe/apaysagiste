@@ -1,0 +1,74 @@
+html {
+  font-size: 62.5%;
+  box-sizing: border-box;
+}
+*, *::after, *::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+body {
+  font-size: 1.6rem;
+  font-family: $fontParagraf;
+  position: relative;
+}
+.container {
+  max-width: 120rem;
+  width: 95%;
+  margin: 0 auto;
+}
+h1, h2, h3 {
+  font-family: $fontTitles;
+}
+h1 {
+  font-size: 4rem;
+  span {
+    font-weight: $regular;
+    color: $white2;
+  }
+}
+h2 {  
+  font: {
+    size: 3.6rem;
+    weight: $regular;    
+  }
+  span {
+    font-weight: $bold;
+    color: $pool1;
+  }
+}
+h3 {
+  font-size: 3rem;
+}
+li {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+}
+img {
+  max-width: 100%;
+}
+.btn {
+  padding: 10px 15px;
+  color: white;
+  background-color: grey;
+}
+.btn_top {
+  position: fixed;
+  right: 30px;
+  bottom: 30px;
+  width: 40px;
+  height: 40px;
+  padding: 10px;
+  border-radius: 50%;
+  background-color: grey;
+
+  &:hover {
+    background-color: black;
+  }
+
+  svg {
+    fill: white;
+  }
+}

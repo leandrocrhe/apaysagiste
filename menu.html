@@ -4,27 +4,34 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>menu</title>
-  <link rel="stylesheet" href="normalize.css">
-  <link rel="stylesheet" href="main.css">
-  <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@100;400;500;700&family=Open+Sans:wght@300;400;600;700&family=Poppins:wght@100;200;300;400;700&family=Prata&display=swap" rel="stylesheet">
-  <script defer src="main.js"></script>
+  <title>APaysagiste</title>
+
+  <link rel="preload" href="" as="style">  
+  <link rel="stylesheet" href="static/css/normalize.css">
+
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Barlow:wght@100;300;400;500;600;700&family=Open+Sans:wght@300;400;500;600;700&family=Poppins:wght@100;200;300;400;500;700&display=swap" crossorigin="crossorigin" as="font">  
+  <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@100;300;400;500;600;700&family=Open+Sans:wght@300;400;500;600;700&family=Poppins:wght@100;200;300;400;500;700&display=swap" rel="stylesheet">
+
+  <link rel="preload" href="static/css/main.css" as="style">  
+  <link rel="stylesheet" href="static/css/main.css">
+
+  <script defer src="static/js/main.js"></script>
 </head>
 <body>
-  <a href="#top" class="btn-top" title="up">
+  <a href="#top" class="btn_top" title="up">
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M201.4 137.4c12.5-12.5 32.8-12.5 45.3 0l160 160c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L224 205.3 86.6 342.6c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3l160-160z"/></svg>
   </a>
 
   <header id="top">
-    <nav class="nav-header">
+    <nav class="nav">
 
-        <a href="/" class="logo" title="home">
-          <img src="img/logo-ap.svg" alt="Logo Apaysagiste">
+        <a href="/" class="nav_logo" title="home">
+          <img src="static/img/logo_ap.svg" alt="Logo Apaysagiste">
         </a>
 
-        <ul class="nav-menu">
+        <ul class="nav_menu">
           <li class="nav-link"><a class="nav-link_a" href="/">Inicio</a></li>
-          <li class="nav-link"><a class="nav-link_a" href="#">Servicios</a>
+          <li class="nav-link" id="sevices"><a class="nav-link_a" href="#sevices">Servicios</a>
             <ul>
               <li><a href="services_01.html">Cemento</a></li>
               <li><a href="services_02.html">Reparación</a></li>
@@ -41,7 +48,7 @@
           <li class="nav-link"><a class="nav-link_a" href="#">Galería</a></li>
           <li class="nav-link"><a class="nav-link_a" href="#">Nosotros</a></li>
           <li class="nav-link"><a class="nav-link_a" href="#">Contacto</a></li>
-          <li class="nav-link"><a class="nav-link_a" href="#">Lenguajes</a>                      
+          <li class="nav-link" id="languages"><a class="nav-link_a" href="#languages">Lenguajes</a>                      
             <ul>
               <li><a href="#">Ingles</a></li>
               <li><a href="#">Frances</a></li>
@@ -50,7 +57,7 @@
           </li>
         </ul>
         
-        <div class="nav-toggle">
+        <div class="nav_toggle">
           <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" stroke-width="1" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M4 6l16 0" /><path d="M4 12l16 0" /><path d="M4 18l16 0" /></svg>
         </div>
     </nav>
@@ -80,16 +87,16 @@
   </div>
 
 
-  <footer class="footer-widget-area">
+  <footer class="footer_widget">
     <div class="footer-block">
       <div class="footer-colum_01">
-        <div class="logo footer-logo"><img src="img/logo-ap.svg" alt="Logo Apaysagiste"></div>
+        <div class="logo footer-logo"><img src="static/img/logo_ap.svg" alt="Logo Apaysagiste"></div>
         <div class="text">
           <p>Contacta con nosotros y te haremos un presupuesto sin compromiso. Estamos a tu disposición por teléfono, correo electrónico o redes sociales.</p>
         </div>
         <div class="credit">
-          <img src="logo-card-visa-blanck.png" alt="Card Visa">
-          <img src="logo-card-master-card-blanck.png" alt="Master Card">
+          <img src="static/img/logo_visa_card.png" alt="Card Visa">
+          <img src="static/img/logo_master_card.png" alt="Master Card">
         </div>
       </div>
   
@@ -116,11 +123,11 @@
         <h3>Contacto</h3>
         <a href="#" class="btn btn-footer">Contactanos</a>
         <div>
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M280 0C408.1 0 512 103.9 512 232c0 13.3-10.7 24-24 24s-24-10.7-24-24c0-101.6-82.4-184-184-184c-13.3 0-24-10.7-24-24s10.7-24 24-24zm8 192a32 32 0 1 1 0 64 32 32 0 1 1 0-64zm-32-72c0-13.3 10.7-24 24-24c75.1 0 136 60.9 136 136c0 13.3-10.7 24-24 24s-24-10.7-24-24c0-48.6-39.4-88-88-88c-13.3 0-24-10.7-24-24zM117.5 1.4c19.4-5.3 39.7 4.6 47.4 23.2l40 96c6.8 16.3 2.1 35.2-11.6 46.3L144 207.3c33.3 70.4 90.3 127.4 160.7 160.7L345 318.7c11.2-13.7 30-18.4 46.3-11.6l96 40c18.6 7.7 28.5 28 23.2 47.4l-24 88C481.8 499.9 466 512 448 512C200.6 512 0 311.4 0 64C0 46 12.1 30.2 29.5 25.4l88-24z"/></svg>
+          <svg xmlns="http://www.w3.org/2000/svg" height="25px" width="25px" viewBox="0 0 512 512"><path d="M280 0C408.1 0 512 103.9 512 232c0 13.3-10.7 24-24 24s-24-10.7-24-24c0-101.6-82.4-184-184-184c-13.3 0-24-10.7-24-24s10.7-24 24-24zm8 192a32 32 0 1 1 0 64 32 32 0 1 1 0-64zm-32-72c0-13.3 10.7-24 24-24c75.1 0 136 60.9 136 136c0 13.3-10.7 24-24 24s-24-10.7-24-24c0-48.6-39.4-88-88-88c-13.3 0-24-10.7-24-24zM117.5 1.4c19.4-5.3 39.7 4.6 47.4 23.2l40 96c6.8 16.3 2.1 35.2-11.6 46.3L144 207.3c33.3 70.4 90.3 127.4 160.7 160.7L345 318.7c11.2-13.7 30-18.4 46.3-11.6l96 40c18.6 7.7 28.5 28 23.2 47.4l-24 88C481.8 499.9 466 512 448 512C200.6 512 0 311.4 0 64C0 46 12.1 30.2 29.5 25.4l88-24z"/></svg>
           <p>Teléfono: <a href="#" class="phone">438-403-2209</a></p>
         </div>
         <div>
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M48 64C21.5 64 0 85.5 0 112c0 15.1 7.1 29.3 19.2 38.4L236.8 313.6c11.4 8.5 27 8.5 38.4 0L492.8 150.4c12.1-9.1 19.2-23.3 19.2-38.4c0-26.5-21.5-48-48-48H48zM0 176V384c0 35.3 28.7 64 64 64H448c35.3 0 64-28.7 64-64V176L294.4 339.2c-22.8 17.1-54 17.1-76.8 0L0 176z"/></svg>
+          <svg xmlns="http://www.w3.org/2000/svg" height="25px" width="25px" viewBox="0 0 512 512"><path d="M48 64C21.5 64 0 85.5 0 112c0 15.1 7.1 29.3 19.2 38.4L236.8 313.6c11.4 8.5 27 8.5 38.4 0L492.8 150.4c12.1-9.1 19.2-23.3 19.2-38.4c0-26.5-21.5-48-48-48H48zM0 176V384c0 35.3 28.7 64 64 64H448c35.3 0 64-28.7 64-64V176L294.4 339.2c-22.8 17.1-54 17.1-76.8 0L0 176z"/></svg>
           <a href="#" class="email">pavepuig@outlook.com</a>
         </div>
         <nav class="nav-footer">
@@ -137,7 +144,7 @@
       </div>
     </div>
   </footer>
-  <footer class="footer-copyright-area">
+  <footer class="footer_copyright">
     <p>Copyright © 2023. All Rights Reserved</p>
   </footer>
   
