@@ -1,0 +1,44 @@
+@mixin phone {
+  @media (min-width: $phone) {
+    @content;
+  }
+}
+@mixin size615 {
+  @media (min-width: $size615) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (min-width: $tablet) {
+    @content;
+  }
+}
+@mixin size850 {
+  @media (min-width: $size850) {
+    @content;
+  }
+}
+@mixin size930 {
+  @media (min-width: $size930) {
+    @content;
+  }
+}
+@mixin desktop {
+  @media (min-width: $desktop) {
+    @content;
+  }
+}
+@mixin grid($colums, $gap) {
+  display: grid;
+  grid-template-columns: repeat($colums, 1fr);
+  gap: $gap;
+}
+
+@mixin gridArea($colums, $rows, $gap) {
+  display: grid;
+  gap: $gap;
+  grid-template-columns: repeat($colums, 1fr);  
+  grid-template-rows: repeat($rows, 1fr);
+  @content;  
+}

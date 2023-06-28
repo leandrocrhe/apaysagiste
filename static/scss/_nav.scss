@@ -1,95 +1,111 @@
+/** Navegación  */
 .nav {
   width: 100%;
-  padding: 5px 5%;
+  padding: 0 5%;
   position: absolute;
   top: 0;
   left: 0;
+  display: flex;
   justify-content: space-between;
   align-items: center;
-  display: flex;
-  background-color: grey;
+  backdrop-filter: blur(4px);
+  -webkit-box-shadow: 0px 6px 15px 0px rgba(0,0,0,0.3);
+  -moz-box-shadow: 0px 6px 15px 0px rgba(0,0,0,0.3);
+  box-shadow: 0px 6px 15px 0px rgba(0,0,0,0.3);
 
-}
+  @include size615 {
+      display: block;
+  }
 
-.nav_logo {
-  width: 200px;
-  display: flex;
+  @include size850 {
+      display: flex;
+  }
 
-  img {
-    width: 200px;
+  @include size930 {
+      padding: 0 8%;
   }
 }
 
 .nav_menu {
-  margin: 19px 0;
   position: relative;
   display: none;
+
+  @include size615 {
+    display: flex;
+    justify-content: space-between;
+  }
 
   li {    
     a {
       display: block;
       width: 100%;
       height: 100%;
-      padding: 10px 15px;
-      color: white;
+      padding: 1.5rem 1.5rem;
+      color: $white1;
 
       &:hover {
           background-color: black;
       }
-    } // a
-
+    }
     ul {
       li {
         position: absolute;
       }
-    } // ul
-  }   // li
-}     // nav_menu
-
+    }
+  }
+}
 .nav_menu-visible {
-  width: 260px;
+  width: 26rem;
   display: flex;
   flex-direction: column;
   position: absolute;
-  top: 55px;
+  top: 5.5rem;
   right: 0;
   background-color: grey;
 }
 
-
 .nav_toggle {
-  display: inline-block;
-  
-  svg {
-    stroke: white;
-  }
-}
+  width: 4rem;
+  height: 4rem;
 
-// Aplica el media queri hasta llegar a ese ancho,
-// Cuando llega aplica los estilos que esta fuera
-
-@media (min-width: 615px) {
-  .nav {
-    display: block;
-  }
-  .nav_menu {
-    display: flex;
-    justify-content: space-between;
-  }
-  .nav_toggle {
+  @include size615 {
     display: none;
   }
-}
 
-@media (min-width: 850px) {
-  .nav {
-    display: flex;
+  &:hover {
+    cursor: pointer;
+  }
+  svg {
+    width: 100%;
+    height: 100%;
+    stroke: $white1;
   }
 }
 
-@media (min-width: 930px) {
-  .nav {
-    padding: 5px 8%;
-    // background-color: brown;
+.nav_sm {
+  width: 100%;
+  height: 0;
+  overflow: hidden;
+  transition: .6s;
+}
+
+.nav_sm-fixed {
+  height: 3rem;
+  position: fixed;
+  z-index: 100;
+  .nav_menu {
+    background-color: rgba(1, 12, 24, 0.9);
+    justify-content: space-evenly;
+
+    li {
+      a {
+        padding: .5rem 0;
+        transition: .6s;
+        &:hover {
+          color: $yellow;
+          background-color: transparent;
+        }
+      }
+    }
   }
 }
