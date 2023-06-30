@@ -37,11 +37,11 @@ h1, h2, h3 {
 
 h1 {
   color: white;
-  font-size: calc(3rem + 1vmin);
+  font-size: calc(3rem + 1vw);
 }
 
 h2 {
-  font-size: 3.6rem;
+  font-size: calc(2.5rem + 1vmin);
   font-weight: 400;
 }
 h2 span {
@@ -50,7 +50,7 @@ h2 span {
 }
 
 h3 {
-  font-size: 3rem;
+  font-size: calc(2rem + 1vmin);
 }
 
 li {
@@ -67,9 +67,12 @@ img, svg {
 }
 
 .btn {
-  padding: 1rem 3rem;
-  text-align: center;
+  padding: 1.4rem 4.4rem;
+  font-size: 1.5rem;
+  font-weight: 600;
+  border-radius: 2.2rem;
   text-transform: uppercase;
+  letter-spacing: 0.1rem;
   color: white;
   background-color: #6d6d6d;
   transition: 0.3s;
@@ -254,7 +257,7 @@ img, svg {
 .banner_100 {
   width: 100%;
   height: 100vh;
-  min-height: 91.9rem;
+  min-height: 60.1rem;
 }
 
 .banner_img-home {
@@ -275,7 +278,6 @@ img, svg {
   height: 100%;
 }
 .banner_text h1 {
-  font-size: 5rem;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -285,15 +287,26 @@ img, svg {
   color: #d6d5d5;
 }
 .banner_text h1 span:nth-child(1) {
-  font-size: 3.5rem;
+  font-size: calc(2.2rem + 1vw);
   color: #ffd000;
 }
 .banner_text p {
   max-width: 70rem;
-  font-size: 1.8rem;
+  font-size: calc(1rem + 1vmin);
   color: white;
   line-height: 1.2;
   margin-bottom: 2rem;
+}
+
+.btn_action {
+  border: 1px solid;
+  background-color: #026D8D;
+  box-shadow: 0 5px 10px -4px #026D8D;
+}
+.btn_action:hover {
+  transform: scale(1.02);
+  background-color: #18A5BF;
+  box-shadow: 0 5px 10px -4px #18A5BF;
 }
 
 /** HOME - warranty */
@@ -487,7 +500,7 @@ img, svg {
   text-align: center;
   width: 100%;
   max-width: 50rem;
-  height: 30.5rem;
+  min-height: 30.5rem;
   margin: 0 auto;
   padding: 3rem;
   position: relative;
@@ -563,7 +576,6 @@ img, svg {
 
 .locations_container h3 {
   color: #026D8D;
-  font-size: 2.8rem;
   text-align: center;
   padding-bottom: 2rem;
   border-bottom: 1px solid;

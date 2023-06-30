@@ -22,12 +22,11 @@ h1, h2, h3 {
 }
 h1 {
   color: white; 
-  // font-size: 4rem; 
-  font-size: calc(3rem + 1vmin); 
+  font-size: calc(3rem + 1vw); 
 }
 h2 { 
   font: {
-    size: 3.6rem;
+    size: calc(2.5rem + 1vmin);
     weight: $regular;    
   }
   span {
@@ -36,7 +35,7 @@ h2 {
   }
 }
 h3 {
-  font-size: 3rem;
+  font-size: calc(2rem + 1vmin);
 }
 li {
   list-style: none;
@@ -49,9 +48,12 @@ img, svg {
   display: block;
 }
 .btn {
-  padding: 1rem 3rem;
-  text-align: center;
+  padding: 1.4rem 4.4rem;
+  font-size: 1.5rem;
+  font-weight: $semiBold;  
+  border-radius: 2.2rem;
   text-transform: uppercase;
+  letter-spacing: 0.1rem;
   color: white;
   background-color: $dark1;
   transition: .3s;
