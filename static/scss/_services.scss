@@ -1,0 +1,18 @@
+.service_container {
+  max-width: $phone;
+  margin: 0 auto;
+  padding: 5rem 0;
+  @include size850 {
+    max-width: 68rem;
+  }
+  
+  @include desktop {
+    max-width: $desktop;
+    @include grid (2, 2rem);
+  }
+}
+.service_texts {
+  p {
+    margin: 2rem 0;
+  }
+}

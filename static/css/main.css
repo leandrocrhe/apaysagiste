@@ -254,20 +254,33 @@ img, svg {
 }
 
 /** HOME - banner */
-.banner_100 {
-  width: 100%;
-  height: 100vh;
-  min-height: 60.1rem;
-}
-
 .banner_img-home {
   /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#000000+0,000000+100&0.65+0,0+100;Neutral+Density */ /* FF3.6-15 */ /* Chrome10-25,Safari5.1-6 */
   background: linear-gradient(90deg, rgba(0, 0, 0, 0.65) 0%, rgba(0, 0, 0, 0) 100%), url(/static/img/banner_home.jpg); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr="#a6000000", endColorstr="#00000000",GradientType=0 ); /* IE6-9 */
+}
+
+.banner_img-services_01 {
+  /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#000000+0,000000+100&0.65+0,0+100;Neutral+Density */ /* FF3.6-15 */ /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(90deg, rgba(0, 0, 0, 0.65) 0%, rgba(0, 0, 0, 0) 100%), url(/static/img/services/bg-services-01.jpg); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr="#a6000000", endColorstr="#00000000",GradientType=0 ); /* IE6-9 */
+}
+
+.banner {
+  width: 100%;
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
+}
+
+.banner_100 {
+  height: 100vh;
+  min-height: 60.1rem;
+}
+
+.banner_40 {
+  height: 40vh;
 }
 
 .banner_text {
@@ -602,6 +615,29 @@ img, svg {
     flex-basis: 60%;
     border-left: 1px solid #04395F;
   }
+}
+
+.service_container {
+  max-width: 480px;
+  margin: 0 auto;
+  padding: 5rem 0;
+}
+@media (min-width: 850px) {
+  .service_container {
+    max-width: 68rem;
+  }
+}
+@media (min-width: 1200px) {
+  .service_container {
+    max-width: 1200px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+  }
+}
+
+.service_texts p {
+  margin: 2rem 0;
 }
 
 .footer_widget {
