@@ -37,7 +37,7 @@ h1, h2, h3 {
 
 h1 {
   color: white;
-  font-size: 4rem;
+  font-size: calc(3rem + 1vmin);
 }
 
 h2 {
@@ -159,18 +159,38 @@ img, svg {
     justify-content: space-between;
   }
 }
-.nav_menu li {
+.nav_menu .nav_link {
   position: relative;
 }
-.nav_menu li a {
+.nav_menu .nav_link:hover .nav_ul {
+  max-height: 1000%;
+  display: block;
+}
+.nav_menu .nav_link a {
+  color: #eeeeee;
   width: 100%;
   padding: 1.5rem 1.5vmax;
-  color: #eeeeee;
   display: block;
   transition: 0.3s;
 }
-.nav_menu li:hover ul {
-  display: block;
+
+.nav_menu-visible {
+  right: 0;
+}
+.nav_menu-visible .nav_link .nav_ul a {
+  padding: 1.2rem 1.5vmax;
+}
+.nav_menu-visible .nav_link-a {
+  background-color: rgba(41, 41, 41, 0.9);
+}
+@media (min-width: 615px) {
+  .nav_menu-visible .nav_link-a {
+    background-color: transparent;
+  }
+}
+.nav_menu-visible .nav_link-a:hover {
+  background-color: rgba(0, 0, 0, 0.75);
+  box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.5);
 }
 
 .nav_link-a:hover {
@@ -179,17 +199,24 @@ img, svg {
   transform: scale(1.05);
 }
 
-.nav_services, .languages {
-  position: absolute;
+.nav_ul {
+  max-height: 0;
+  padding: 0 0.5rem;
+  overflow: hidden;
+  position: relative;
   left: 0;
-  display: none;
   transition: 0.5s;
 }
-.nav_services a, .languages a {
+@media (min-width: 615px) {
+  .nav_ul {
+    position: absolute;
+  }
+}
+.nav_ul a {
   white-space: nowrap;
   background-color: rgba(27, 27, 27, 0.9);
 }
-.nav_services a:hover, .languages a:hover {
+.nav_ul a:hover {
   color: #ffd000;
   background-color: rgba(0, 0, 0, 0.75);
   transform: scale(1.02) translateX(-2px);
@@ -198,20 +225,6 @@ img, svg {
 
 .languages {
   width: 100%;
-}
-
-.nav_menu-visible {
-  right: 0;
-}
-.nav_menu-visible a {
-  white-space: nowrap;
-  background-color: rgba(41, 41, 41, 0.9);
-}
-.nav_menu-visible a:hover {
-  color: #ffd000;
-  background-color: rgba(0, 0, 0, 0.75);
-  transform: scale(1.02) translateX(-2px);
-  box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.5);
 }
 
 .nav_toggle {
@@ -237,23 +250,6 @@ img, svg {
   transform: scale(1.1);
 }
 
-/*
-.nav_sm {
-  width: 100%;
-  display: none;
-  transition: .6s;
-}
-
-.nav_sm-fixed {
-  position: fixed;
-  display: block;
-  z-index: 2;
-  .nav_menu {
-    background-color: rgba(1, 12, 24, 0.9);
-    justify-content: space-evenly;
-  }
-}
-*/
 /** HOME - banner */
 .banner_100 {
   width: 100%;

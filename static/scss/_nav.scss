@@ -1,4 +1,5 @@
 /** Navegación  */
+
 .nav {
   position: fixed;
   width: 100%;
@@ -44,38 +45,69 @@
     justify-content: space-between;
   }
 
-  li {        // ul li
-    position: relative;
-    a {
-      width: 100%;
-      padding: 1.5rem 1.5vmax;
-      color: $white1;
-      display: block;
-      transition: .3s;
-    }
-    
+  .nav_link {        // ul li
+    position: relative;    
     &:hover {
-      ul {
+      .nav_ul {
+        max-height: 1000%;
         display: block;
       }
     }
+    a {
+      color: $white1;
+      width: 100%;
+      padding: 1.5rem 1.5vmax;
+      display: block;
+      transition: .3s;
+    }
   }
 }
-.nav_link-a {  
+
+.nav_menu-visible {
+  right: 0;
+  .nav_link {        // ul li
+    .nav_ul {
+      a {
+        padding: 1.2rem 1.5vmax;
+      }
+    }
+  }
+  .nav_link-a {
+    background-color: rgba(41, 41, 41, 0.9);
+    @include size615 {
+      background-color: transparent;
+    }
+    &:hover {
+      background-color: rgba(0, 0, 0, 0.75);
+      -webkit-box-shadow: 0px 3px 5px 0px rgba(0,0,0,0.5);
+      -moz-box-shadow: 0px 3px 5px 0px rgba(0,0,0,0.5);
+      box-shadow: 0px 3px 5px 0px rgba(0,0,0,0.5);
+    }
+  }
+}
+
+.nav_link-a {
   &:hover {
     color: white;
     background-color: rgba(13, 58, 95, 0.6);
     transform: scale(1.05);
   }
 }
-.nav_services, .languages {
-  position: absolute;
+.nav_ul {
+  max-height: 0;
+  padding: 0 0.5rem;
+  overflow: hidden;
+  position: relative;
   left: 0;
-  display: none;
+  // display: none;
   transition: .5s;
+  @include size615 {
+    position: absolute;
+  }
   a {
     white-space: nowrap;
     background-color: rgba(27, 27, 27, 0.9);
+
     &:hover {
       color: $yellow;
       background-color: rgba(0, 0, 0, 0.75);
@@ -88,21 +120,6 @@
 }
 .languages {
   width: 100%;
-}
-.nav_menu-visible {
-  right: 0;
-  a {
-    white-space: nowrap;
-    background-color: rgba(41, 41, 41, 0.9);
-    &:hover {
-      color: $yellow;
-      background-color: rgba(0, 0, 0, 0.75);
-      transform: scale(1.02) translateX(-2px);
-      -webkit-box-shadow: 0px 3px 5px 0px rgba(0,0,0,0.5);
-      -moz-box-shadow: 0px 3px 5px 0px rgba(0,0,0,0.5);
-      box-shadow: 0px 3px 5px 0px rgba(0,0,0,0.5);
-    }
-  }
 }
 
 .nav_toggle {
@@ -127,22 +144,3 @@
     }
   }
 }
-
-// Nav menu small
-/*
-.nav_sm {
-  width: 100%;
-  display: none;
-  transition: .6s;
-}
-
-.nav_sm-fixed {
-  position: fixed;
-  display: block;
-  z-index: 2;
-  .nav_menu {
-    background-color: rgba(1, 12, 24, 0.9);
-    justify-content: space-evenly;
-  }
-}
-*/
