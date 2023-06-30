@@ -1,4 +1,13 @@
 @charset "UTF-8";
+/* 
+                z-index:
+16:   nav:          16
+68:   btn_top       68
+123:  nav Samll:    2
+48:   home sevices  1
+62:   home sevices  1
+
+*/
 html {
   font-size: 62.5%;
   box-sizing: border-box;
@@ -14,7 +23,6 @@ html {
 body {
   font-size: 1.6rem;
   font-family: "Open Sans", sans-serif;
-  position: relative;
 }
 
 .container {
@@ -64,6 +72,7 @@ img, svg {
   text-transform: uppercase;
   color: white;
   background-color: #6d6d6d;
+  transition: 0.3s;
 }
 
 .btn_top {
@@ -76,6 +85,7 @@ img, svg {
   border-radius: 50%;
   background-color: rgba(0, 0, 0, 0.6509803922);
   opacity: 0.5;
+  z-index: 2;
 }
 .btn_top:hover {
   opacity: 1;
@@ -101,17 +111,19 @@ img, svg {
 
 /** Navegación  */
 .nav {
+  position: fixed;
   width: 100%;
   padding: 0 5%;
-  position: absolute;
   top: 0;
   left: 0;
   display: flex;
   justify-content: space-between;
   align-items: center;
   -webkit-backdrop-filter: blur(4px);
-          backdrop-filter: blur(4px);
+  backdrop-filter: blur(4px);
+  background-color: rgba(13, 58, 95, 0.38);
   box-shadow: 0px 6px 15px 0px rgba(0, 0, 0, 0.3);
+  z-index: 2;
 }
 @media (min-width: 615px) {
   .nav {
@@ -130,37 +142,76 @@ img, svg {
 }
 
 .nav_menu {
-  position: relative;
-  display: none;
+  width: 29rem;
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  top: 7.23rem;
+  right: -30rem;
+  transition: 0.5s;
 }
 @media (min-width: 615px) {
   .nav_menu {
+    width: auto;
+    position: initial;
     display: flex;
+    flex-direction: row;
     justify-content: space-between;
   }
 }
+.nav_menu li {
+  position: relative;
+}
 .nav_menu li a {
-  display: block;
   width: 100%;
-  height: 100%;
-  padding: 1.5rem 1.5rem;
+  padding: 1.5rem 1.5vmax;
   color: #eeeeee;
+  display: block;
+  transition: 0.3s;
 }
-.nav_menu li a:hover {
-  background-color: black;
+.nav_menu li:hover ul {
+  display: block;
 }
-.nav_menu li ul li {
+
+.nav_link-a:hover {
+  color: white;
+  background-color: rgba(13, 58, 95, 0.6);
+  transform: scale(1.05);
+}
+
+.nav_services, .languages {
   position: absolute;
+  left: 0;
+  display: none;
+  transition: 0.5s;
+}
+.nav_services a, .languages a {
+  white-space: nowrap;
+  background-color: rgba(27, 27, 27, 0.9);
+}
+.nav_services a:hover, .languages a:hover {
+  color: #ffd000;
+  background-color: rgba(0, 0, 0, 0.75);
+  transform: scale(1.02) translateX(-2px);
+  box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.5);
+}
+
+.languages {
+  width: 100%;
 }
 
 .nav_menu-visible {
-  width: 26rem;
-  display: flex;
-  flex-direction: column;
-  position: absolute;
-  top: 5.5rem;
   right: 0;
-  background-color: grey;
+}
+.nav_menu-visible a {
+  white-space: nowrap;
+  background-color: rgba(41, 41, 41, 0.9);
+}
+.nav_menu-visible a:hover {
+  color: #ffd000;
+  background-color: rgba(0, 0, 0, 0.75);
+  transform: scale(1.02) translateX(-2px);
+  box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.5);
 }
 
 .nav_toggle {
@@ -179,38 +230,35 @@ img, svg {
   width: 100%;
   height: 100%;
   stroke: #eeeeee;
+  transition: 0.3s;
+}
+.nav_toggle svg:hover {
+  stroke: #ffd000;
+  transform: scale(1.1);
 }
 
+/*
 .nav_sm {
   width: 100%;
-  height: 0;
-  overflow: hidden;
-  transition: 0.6s;
+  display: none;
+  transition: .6s;
 }
 
 .nav_sm-fixed {
-  height: 3rem;
   position: fixed;
-  z-index: 100;
+  display: block;
+  z-index: 2;
+  .nav_menu {
+    background-color: rgba(1, 12, 24, 0.9);
+    justify-content: space-evenly;
+  }
 }
-.nav_sm-fixed .nav_menu {
-  background-color: rgba(1, 12, 24, 0.9);
-  justify-content: space-evenly;
-}
-.nav_sm-fixed .nav_menu li a {
-  padding: 0.5rem 0;
-  transition: 0.6s;
-}
-.nav_sm-fixed .nav_menu li a:hover {
-  color: #ffd000;
-  background-color: transparent;
-}
-
+*/
 /** HOME - banner */
 .banner_100 {
   width: 100%;
   height: 100vh;
-  min-height: 64.5rem;
+  min-height: 91.9rem;
 }
 
 .banner_img-home {
@@ -326,37 +374,38 @@ img, svg {
 
 .services_galery {
   padding: 3rem 0;
-  display: grid;
-  grid-template-columns: repeat(1, 1fr);
-  gap: 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
 }
 @media (min-width: 480px) {
-  .services_galery {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 2rem;
+  .services_galery .item {
+    flex-basis: calc(50% - 0.5rem);
   }
 }
-@media (min-width: 768px) {
-  .services_galery {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 2rem;
+@media (min-width: 930px) {
+  .services_galery .item {
+    flex-basis: calc(33.3% - 0.5rem);
   }
 }
 @media (min-width: 1200px) {
-  .services_galery {
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    gap: 2rem;
+  .services_galery .item {
+    flex-basis: calc(20% - 0.5rem);
   }
 }
 
 .item {
-  width: 100%;
+  margin: 0.5rem 0;
   height: 30rem;
+  flex-basis: calc(100% - 0.5rem);
   position: relative;
   overflow: hidden;
+}
+.item:hover section {
+  bottom: 1.2rem;
+}
+.item:hover p {
+  color: white;
 }
 .item a {
   font-size: 1.3rem;
@@ -380,19 +429,19 @@ img, svg {
   color: white;
   position: absolute;
   bottom: -3rem;
-  z-index: 1;
   transition: 0.3s;
+  z-index: 1;
 }
 .item h3 {
   font-size: 2rem;
   font-weight: 400;
+  text-shadow: 0 1px 3px black;
+  margin-bottom: 1rem;
 }
 .item p {
   color: transparent;
   font-size: 1.3rem;
   display: block;
-  position: absolute;
-  bottom: 3rem;
   transition: 0.4s;
 }
 .item .image {
@@ -416,16 +465,8 @@ img, svg {
   width: 100%;
   height: 13rem;
   -webkit-backdrop-filter: blur(1px);
-          backdrop-filter: blur(1px);
+  backdrop-filter: blur(1px);
   background: linear-gradient(transparent 10%, rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.8));
-}
-
-.item:hover section {
-  bottom: 0;
-}
-.item:hover p {
-  color: white;
-  bottom: 3.5rem;
 }
 
 .section_container-testimonials {
@@ -453,10 +494,10 @@ img, svg {
   height: 30.5rem;
   margin: 0 auto;
   padding: 3rem;
+  position: relative;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
-  position: relative;
   background-color: white;
   transition: 0.5s;
 }
@@ -512,7 +553,6 @@ img, svg {
   background-repeat: no-repeat;
   background-position: center center;
   background-attachment: fixed;
-  z-index: -1;
 }
 .section_container-location::after {
   content: "";

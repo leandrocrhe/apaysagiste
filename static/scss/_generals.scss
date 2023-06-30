@@ -11,7 +11,6 @@ html {
 body {
   font-size: 1.6rem;
   font-family: $fontParagraf;
-  position: relative;
 }
 .container {
   max-width: 120rem;
@@ -54,6 +53,7 @@ img, svg {
   text-transform: uppercase;
   color: white;
   background-color: $dark1;
+  transition: .3s;
 }
 .btn_top {
   position: fixed;
@@ -65,6 +65,7 @@ img, svg {
   border-radius: 50%;
   background-color: #000000a6;
   opacity: .5;
+  z-index: 2;
   &:hover {
     opacity: 1;
     background-color: $dark2;
