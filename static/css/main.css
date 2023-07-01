@@ -266,6 +266,60 @@ img, svg {
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr="#a6000000", endColorstr="#00000000",GradientType=0 ); /* IE6-9 */
 }
 
+.banner_img-services_02 {
+  /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#000000+0,000000+100&0.65+0,0+100;Neutral+Density */ /* FF3.6-15 */ /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(90deg, rgba(0, 0, 0, 0.65) 0%, rgba(0, 0, 0, 0) 100%), url(/static/img/services/bg-services-02.jpg); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr="#a6000000", endColorstr="#00000000",GradientType=0 ); /* IE6-9 */
+}
+
+.banner_img-services_03 {
+  /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#000000+0,000000+100&0.65+0,0+100;Neutral+Density */ /* FF3.6-15 */ /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(90deg, rgba(0, 0, 0, 0.65) 0%, rgba(0, 0, 0, 0) 100%), url(/static/img/services/bg-services-03.jpg); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr="#a6000000", endColorstr="#00000000",GradientType=0 ); /* IE6-9 */
+}
+
+.banner_img-services_04 {
+  /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#000000+0,000000+100&0.65+0,0+100;Neutral+Density */ /* FF3.6-15 */ /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(90deg, rgba(0, 0, 0, 0.65) 0%, rgba(0, 0, 0, 0) 100%), url(/static/img/services/bg-services-04.jpg); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr="#a6000000", endColorstr="#00000000",GradientType=0 ); /* IE6-9 */
+}
+
+.banner_img-services_05 {
+  /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#000000+0,000000+100&0.65+0,0+100;Neutral+Density */ /* FF3.6-15 */ /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(90deg, rgba(0, 0, 0, 0.65) 0%, rgba(0, 0, 0, 0) 100%), url(/static/img/services/bg-services-05.jpg); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr="#a6000000", endColorstr="#00000000",GradientType=0 ); /* IE6-9 */
+}
+
+.banner_img-services_06 {
+  /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#000000+0,000000+100&0.65+0,0+100;Neutral+Density */ /* FF3.6-15 */ /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(90deg, rgba(0, 0, 0, 0.65) 0%, rgba(0, 0, 0, 0) 100%), url(/static/img/services/bg-services-06.jpg); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr="#a6000000", endColorstr="#00000000",GradientType=0 ); /* IE6-9 */
+}
+
+.banner_img-services_07 {
+  /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#000000+0,000000+100&0.65+0,0+100;Neutral+Density */ /* FF3.6-15 */ /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(90deg, rgba(0, 0, 0, 0.65) 0%, rgba(0, 0, 0, 0) 100%), url(/static/img/services/bg-services-07.jpg); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr="#a6000000", endColorstr="#00000000",GradientType=0 ); /* IE6-9 */
+}
+
+.banner_img-services_08 {
+  /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#000000+0,000000+100&0.65+0,0+100;Neutral+Density */ /* FF3.6-15 */ /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(90deg, rgba(0, 0, 0, 0.65) 0%, rgba(0, 0, 0, 0) 100%), url(/static/img/services/bg-services-08.jpg); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr="#a6000000", endColorstr="#00000000",GradientType=0 ); /* IE6-9 */
+}
+
+.banner_img-services_09 {
+  /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#000000+0,000000+100&0.65+0,0+100;Neutral+Density */ /* FF3.6-15 */ /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(90deg, rgba(0, 0, 0, 0.65) 0%, rgba(0, 0, 0, 0) 100%), url(/static/img/services/bg-services-09.jpg); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr="#a6000000", endColorstr="#00000000",GradientType=0 ); /* IE6-9 */
+}
+
+.banner_img-services_10 {
+  /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#000000+0,000000+100&0.65+0,0+100;Neutral+Density */ /* FF3.6-15 */ /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(90deg, rgba(0, 0, 0, 0.65) 0%, rgba(0, 0, 0, 0) 100%), url(/static/img/services/bg-services-10.jpg); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr="#a6000000", endColorstr="#00000000",GradientType=0 ); /* IE6-9 */
+}
+
 .banner {
   width: 100%;
   background-position: center center;
@@ -283,6 +337,7 @@ img, svg {
   height: 40vh;
 }
 
+/** HOME - banner */
 .banner_text {
   display: flex;
   flex-direction: column;
@@ -417,7 +472,7 @@ img, svg {
 }
 
 .item {
-  margin: 0.5rem 0;
+  margin: 0.35rem 0;
   height: 30rem;
   flex-basis: calc(100% - 0.5rem);
   position: relative;
@@ -617,6 +672,10 @@ img, svg {
   }
 }
 
+.services_main_container {
+  padding: 3rem 0;
+}
+
 .service_container {
   max-width: 480px;
   margin: 0 auto;
@@ -640,6 +699,15 @@ img, svg {
   margin: 2rem 0;
 }
 
+@media (min-width: 1200px) {
+  .services_section:nth-child(even) .service_container .service_texts {
+    grid-column: 2/3;
+  }
+  .services_section:nth-child(even) .service_container .service_picture {
+    grid-column: 1/2;
+    grid-row: 1/2;
+  }
+}
 .footer_widget {
   background-color: #292929;
 }
@@ -797,7 +865,7 @@ img, svg {
   background-color: #4267B2;
 }
 .footer_socials a:nth-child(2) {
-  background: #C13584;
+  background-color: #C13584;
 }
 .footer_socials a:nth-child(3) {
   background-color: #1DA1F2;
@@ -819,16 +887,13 @@ img, svg {
   width: 2.5rem;
   height: 2.5rem;
 }
-.footer_socials .icon-facebook {
+.footer_socials .icon-facebook,
+.footer_socials .icon-twitter {
   stroke: none;
   fill: #eeeeee;
 }
 .footer_socials .icon-instagram {
   stroke: #eeeeee;
-}
-.footer_socials .icon-twitter {
-  stroke: none;
-  fill: #eeeeee;
 }
 
 .footer_copyright {

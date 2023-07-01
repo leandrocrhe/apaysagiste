@@ -150,7 +150,7 @@
       background-color: #4267B2;      
     }
     &:nth-child(2) {
-      background: #C13584;      
+      background-color: #C13584;      
     }
     &:nth-child(3) {
       background-color: #1DA1F2;      
@@ -174,16 +174,13 @@
     width: 2.5rem;
     height: 2.5rem;
   }
-  .icon-facebook {
+  .icon-facebook,
+  .icon-twitter {
     stroke: none;
     fill: $white1;
   }
   .icon-instagram {
     stroke: $white1;
-  }
-  .icon-twitter {
-    stroke: none;
-    fill: $white1;
   }
 }
 .footer_copyright {
