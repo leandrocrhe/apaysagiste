@@ -5,7 +5,7 @@ const btnFloat = document.querySelector(".btn_top");
 window.addEventListener('scroll', () => {
   const services = document.querySelector('h1');
   const mapServ = services.getBoundingClientRect();
-  if (mapServ.top >= -10) {
+  if (mapServ.top > -10) {
     btnFloat.classList.add("btn_top-disabled");
   } else {
     btnFloat.classList.remove("btn_top-disabled"); 
