@@ -31,7 +31,7 @@ body {
   margin: 0 auto;
 }
 
-h1, h2, h3 {
+h1, h2, h3, h4 {
   font-family: "Barlow", sans-serif;
 }
 
@@ -51,6 +51,10 @@ h2 span {
 
 h3 {
   font-size: calc(2rem + 1vmin);
+}
+
+h4 {
+  font-size: 2rem;
 }
 
 li {
@@ -101,6 +105,10 @@ img, svg {
   fill: #d6d5d5;
 }
 
+.btn_top-disabled {
+  display: none;
+}
+
 .logo {
   width: 20rem;
   display: flex;
@@ -110,6 +118,17 @@ img, svg {
   width: 100%;
   height: 100%;
   margin: 2% 0;
+}
+
+.section_container {
+  padding: 4rem 0;
+}
+.section_container .section_titles {
+  text-align: center;
+}
+.section_container .section_titles p {
+  max-width: 68.5rem;
+  margin: 3rem auto;
 }
 
 /** Navegación  */
@@ -320,17 +339,29 @@ img, svg {
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr="#a6000000", endColorstr="#00000000",GradientType=0 ); /* IE6-9 */
 }
 
+.banner_img-about {
+  /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#000000+0,000000+100&0.65+0,0+100;Neutral+Density */ /* FF3.6-15 */ /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(90deg, rgba(0, 0, 0, 0.65) 0%, rgba(0, 0, 0, 0) 100%), url(/static/img/bg-about.jpg); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr="#a6000000", endColorstr="#00000000",GradientType=0 ); /* IE6-9 */
+}
+
+.banner_img-contact {
+  /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#000000+0,000000+100&0.65+0,0+100;Neutral+Density */ /* FF3.6-15 */ /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(90deg, rgba(0, 0, 0, 0.65) 0%, rgba(0, 0, 0, 0) 100%), url(/static/img/bg-contact.jpg); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr="#a6000000", endColorstr="#00000000",GradientType=0 ); /* IE6-9 */
+}
+
 .banner {
   width: 100%;
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
-  background-attachment: fixed;
 }
 
 .banner_100 {
   height: 100vh;
   min-height: 60.1rem;
+  background-attachment: fixed;
 }
 
 .banner_40 {
@@ -378,17 +409,6 @@ img, svg {
 }
 
 /** HOME - warranty */
-.section_container {
-  padding: 4rem 0;
-}
-.section_container .section_titles {
-  text-align: center;
-}
-.section_container .section_titles p {
-  max-width: 68.5rem;
-  margin: 3rem auto;
-}
-
 .section_container-warranty {
   background: linear-gradient(#18A5BF, #04395F);
   color: #eeeeee;
@@ -708,6 +728,13 @@ img, svg {
     grid-row: 1/2;
   }
 }
+.description_about_container h4 {
+  margin-bottom: 2rem;
+}
+.description_about_container p {
+  line-height: 1.5;
+}
+
 .footer_widget {
   background-color: #292929;
 }
