@@ -1,0 +1,47 @@
+{% extends 'layout.html' %}
+{% load static %}
+{% block title %} - Services{% endblock %}
+
+{% block content %}
+
+<main>
+  <!-- Contenedor de titulo fondo azul -->
+  <div class="section_container section_container-blue padding-top">
+    <div class="container">
+      <section class="section_titles">
+        {% for home in homes %}
+        <h2>
+          {{ home.service_title }} {{ home.service_span }}
+          <span></span>
+        </h2>
+        <p>{{ home.service_text|safe|linebreaks }}</p>
+        {% endfor %}
+      </section>
+    </div>
+  </div>
+
+    <!-- Servicios -->
+    <div class="section_container section_container-services container">  
+      <div class="services_galery">
+
+        {% for service in services %}
+        <div class="item">
+          <section>
+            <h3>{{ service.title }}</h3>
+            <p>{{ service.description|truncatewords:15 }}</p>
+          </section>
+          <a href="{% url service.url %}" class="">{{ service.button_detail }}</a>
+          <div class="image">
+            <img src="{{ service.banner.url }}" alt="{{ service.title }}">
+          </div>
+        </div>
+        {% endfor %}      
+
+      </div>
+    </div>
+  
+</main>
+
+{% endblock %}
+
+  

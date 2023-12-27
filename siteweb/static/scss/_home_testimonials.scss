@@ -1,0 +1,74 @@
+.section_container-testimonials {
+  background-color: $white1;
+}
+.testimonials_container {
+  margin: 5rem 0;
+  @include grid(1, 5rem);
+
+  @include size930 {
+    @include grid(2, 4rem);
+
+  }
+}
+.testimonials_card {
+  text-align: center;
+  width: 100%;
+  max-width: 50rem;
+  min-height: 30.5rem;
+  margin: 0 auto;
+  padding: 3rem;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  background-color: white;
+  transition: .5s;
+  &::before {
+    content: "";
+    position: absolute;
+    top: 3rem;
+    right: 5rem;
+    width: 8rem;
+    height: 8rem;
+    background-image: url(/static/img/quote.svg);
+    background-size: cover;
+    opacity: .1;
+    transition: .3s;
+  }
+  &::after {
+    content: "";
+    position: absolute;
+    left: 5rem;
+    bottom: 3rem;
+    width: 8rem;
+    height: 8rem;
+    background-image: url(/static/img/quote.svg);
+    background-size: cover;
+    transform: rotate(180deg);
+    opacity: .1;
+    transition: .3s;
+  }
+  &:hover {
+    color: $white1;
+    background-color: $pool3;
+    &::before {
+      top: -4rem;
+      opacity: 1;
+    }
+    &::after {
+      bottom: -4rem;
+      opacity: 1;
+    }
+  }
+  p {
+    line-height: 1.5;
+  }
+}
+.testimonials_contact {  
+  .testimonials_name {
+    font-weight: $bold;
+  }
+  p:nth-child(2) {
+    color: $grey1;
+  }
+}

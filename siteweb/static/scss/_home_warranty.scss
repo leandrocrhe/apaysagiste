@@ -1,0 +1,59 @@
+/** HOME - warranty */
+.section_container-warranty,
+.section_container-blue {
+  background: linear-gradient($pool1, $pool4);
+  color: $white1;
+  h2 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    span {
+      color: $white1;
+    }
+  }
+}
+.warranty_container {
+  padding: 2rem 0;
+  @include grid(1, 2rem);
+  
+  @include tablet {
+    @include grid(2, 2rem);
+  }
+
+  h3 {
+    margin: 2.5rem 0;
+    text-align: center;
+    font-weight: $medium;
+  }
+}
+.warranty_logo {
+  img {
+    max-height: 18rem;
+    display: block;
+    margin: 3rem auto;
+  }
+}
+.card {
+  p {
+    max-width: 50rem;
+    margin: 0 auto;
+    text-align: justify;
+    line-height: 1.6;
+    a {
+      display: block;
+      color: $blue;
+      font-weight: $light;
+      text-align: center;
+      line-height: 1;
+      margin-top: 1rem;
+      padding: 1rem;
+      background-color: $pool2;
+      transition: .5s;
+
+      &:hover {
+        color: white;
+        background-color: darken($pool4, $amount: 10);
+      }
+    }
+  }
+}

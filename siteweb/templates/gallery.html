@@ -1,0 +1,121 @@
+{% extends 'layout.html' %}
+{% load static %}
+{% block title %} - Gallery{% endblock %}
+{% load cloudinary %}
+
+{% block csslightgallery %}
+  <!-- lightgallery -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.2/css/lightgallery.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.1/css/lg-thumbnail.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.2/css/lg-autoplay.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.1/css/lg-fullscreen.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.1/css/lg-share.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.1/css/lg-zoom.min.css">
+{% endblock %}
+
+{% block content %}
+
+<main>
+  <!-- Contenedor de titulo fondo azul -->
+  <div class="section_container section_container-blue padding-top">
+    <div class="container">
+      <section class="section_titles">
+        <h2>
+          {{thisService.title}}
+          <span>{{thisService.subtitle}}</span>         
+        </h2>
+      </section>
+    </div>
+  </div>
+  
+  <!-- Formulario upload -->
+  {% if user.is_authenticated and user.is_superuser %}
+  <div class="container">
+    <form
+      action="{% url 'uploadMultiImgs' %}"
+      method="POST"
+      enctype="multipart/form-data">
+      {% csrf_token %}
+      <input type="file" name="images" accept="image/*" multiple />
+      <button type="submit" >
+        Guardar en Galeria
+      </button>
+    </form>
+  </div>
+  {% endif %}
+
+  <!-- Galería -->
+  <div class="gallery" id="gallery">
+    <a data-lg-size="1927-900" href="{% static '/img/gallery/img01.jpg' %}">
+      <img src="{% static '/img/gallery/img01.jpg' %}" alt="">
+    </a>
+    <a data-lg-size="1927-900" href="{% static '/img/gallery/img02.jpg' %}">
+      <img src="{% static '/img/gallery/img02.jpg' %}" alt="">
+    </a>
+    <a data-lg-size="1927-900" href="{% static '/img/gallery/img03.jpg' %}">
+      <img src="{% static '/img/gallery/img03.jpg' %}" alt="">
+    </a>
+    <a data-lg-size="1927-900" href="{% static '/img/gallery/img04.jpg' %}">
+      <img src="{% static '/img/gallery/img04.jpg' %}" alt="">
+    </a>
+    <a data-lg-size="900-1551" href="{% static '/img/gallery/img05.jpg' %}">
+      <img src="{% static '/img/gallery/img05.jpg' %}" alt="">
+    </a>
+    <a data-lg-size="1927-900" href="{% static '/img/gallery/img06.jpg' %}">
+      <img src="{% static '/img/gallery/img06.jpg' %}" alt="">
+    </a>
+    <a data-lg-size="1927-900" href="{% static '/img/gallery/img07.jpg' %}">
+      <img src="{% static '/img/gallery/img07.jpg' %}" alt="">
+    </a>
+    <a data-lg-size="1927-900" href="{% static '/img/gallery/img08.jpg' %}">
+      <img src="{% static '/img/gallery/img08.jpg' %}" alt="">
+    </a>
+    <a data-lg-size="1927-900" href="{% static '/img/gallery/img09.jpg' %}">
+      <img src="{% static '/img/gallery/img09.jpg' %}" alt="">
+    </a>
+    <a data-lg-size="1927-900" href="{% static '/img/gallery/img10.jpg' %}">
+      <img src="{% static '/img/gallery/img10.jpg' %}" alt="">
+    </a>
+    <a data-lg-size="1927-900" href="{% static '/img/gallery/img11.jpg' %}">
+      <img src="{% static '/img/gallery/img11.jpg' %}" alt="">
+    </a>
+    <a data-lg-size="1927-900" href="{% static '/img/gallery/img12.jpg' %}">
+      <img src="{% static '/img/gallery/img12.jpg' %}" alt="">
+    </a>
+    <a data-lg-size="768-1024" href="{% static '/img/gallery/img13.jpg' %}">
+      <img src="{% static '/img/gallery/img13.jpg' %}" alt="">
+    </a>
+    {% for img in images %}    
+    <a data-lg-size="" href="{{ img.images.url }}">
+      
+      {% comment %} {% cl_image_tag img.images width=200 height=150 %} {% endcomment %}
+      {% cloudinary img.images.url crop=thumb %}
+      {% comment %} <img src="{{ img.images.url }}" alt="{{ img.images.name }}"> {% endcomment %}
+    </a>
+    {% endfor %}
+  </div>
+  
+</main>
+
+{% endblock %}
+
+  
+{% block scriptlightgallery %}
+  <!-- lightgallery -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.2/lightgallery.min.js"></script>
+  <!-- plugins -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.1/plugins/thumbnail/lg-thumbnail.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.1/plugins/autoplay/lg-autoplay.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.1/plugins/fullscreen/lg-fullscreen.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.1/plugins/share/lg-share.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.1/plugins/zoom/lg-zoom.min.js"></script>
+  <!-- script lightgallery -->
+  <script type="text/javascript">
+    lightGallery(document.querySelector('.gallery'), {
+      controls: true,
+      download: false,
+      plugins: [lgThumbnail, lgAutoplay, lgFullscreen, lgShare, lgZoom],      
+      thumbWidth: 100,
+    });
+  </script>
+{% endblock %}

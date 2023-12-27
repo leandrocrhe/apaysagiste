@@ -1,0 +1,92 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-12-25 11:48-0500\n"
+"PO-Revision-Date: 2023-12-25 14:16-0500\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: fr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"X-Generator: Poedit 3.4.2\n"
+
+#: .\siteweb\templates\form_nav.html:4
+msgid "English"
+msgstr "Anglais"
+
+#: .\siteweb\templates\form_nav.html:11
+msgid "French"
+msgstr "Français"
+
+#: .\siteweb\templates\form_nav.html:18
+msgid "Spanish"
+msgstr "Espagnol"
+
+#: .\siteweb\templates\index.html:111
+msgid "See more"
+msgstr "Voir plus"
+
+#: .\siteweb\templates\layout.html:51
+msgid ""
+"Contact us and we will give you an estimate without obligation. We are at "
+"your disposal by phone, email or social networks."
+msgstr ""
+"Contactez-nous et nous vous ferons un devis sans engagement. Nous sommes à "
+"votre disposition par téléphone, email ou sur les réseaux sociaux."
+
+#: .\siteweb\templates\layout.html:61
+msgid "Products"
+msgstr "Produits"
+
+#: .\siteweb\templates\layout.html:70
+msgid "Navigation"
+msgstr "Navigation"
+
+#: .\siteweb\templates\layout.html:72 .\siteweb\templates\navbar.html:11
+msgid "Home"
+msgstr "Accueil"
+
+#: .\siteweb\templates\layout.html:73 .\siteweb\templates\navbar.html:12
+msgid "Services"
+msgstr "Services"
+
+#: .\siteweb\templates\layout.html:74 .\siteweb\templates\navbar.html:26
+msgid "Gallery"
+msgstr "Galerie"
+
+#: .\siteweb\templates\layout.html:75
+msgid "About us"
+msgstr "A propos de nous"
+
+#: .\siteweb\templates\layout.html:80
+msgid "Contact"
+msgstr "Contact"
+
+#: .\siteweb\templates\layout.html:82
+msgid "Contact us"
+msgstr "Contactez nous"
+
+#: .\siteweb\templates\layout.html:85
+msgid "Phone"
+msgstr "Tél"
+
+#: .\siteweb\templates\navbar.html:27
+msgid "About Us"
+msgstr "À propos de nous"
+
+#: .\siteweb\templates\navbar.html:28
+msgid "Contact Us"
+msgstr "Contactez nous"
+
+#: .\siteweb\templates\navbar.html:29
+msgid "Lenguajes"
+msgstr ""

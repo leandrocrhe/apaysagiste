@@ -1,0 +1,65 @@
+.block_about_container {
+  h2 {
+    color: $poolGreen2;
+    font-weight: $bold;
+    margin-bottom: 3rem;
+  }
+  h4 {
+    margin-bottom: 2rem;
+  }
+  p {
+    line-height: 1.5;
+  }
+}
+
+.section_about {
+  display: flex;
+  &:nth-child(even) {
+    min-height: 68.5rem;
+    position: relative;
+    background-image: url(../img/bg_wave.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: top;
+  }
+}
+
+.section_about_text {
+  padding: 10rem 0; 
+  img {
+    width: 100%;
+    max-height: 24.3rem;
+    margin: 0 auto;
+  }
+  p {
+    margin: 2rem 0;
+  }
+}
+
+.flex2 {
+  margin-top: 5rem;
+}
+
+@include size850 {
+  .section_about_text {
+    display: flex;
+    align-items: center;
+    gap: 5rem;
+  }  
+  .flex1 {
+    width: 50%;    
+  }
+  .flex2 {
+    margin-top: 0px;
+    width: 50%;
+
+    div {
+      margin-top: 5rem;
+    }
+  }
+}
+
+
+
+    
+

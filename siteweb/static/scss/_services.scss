@@ -1,0 +1,39 @@
+.services_main_container {
+  padding: 3rem 0;  
+}
+.block_container {
+  max-width: $phone;
+  margin: 0 auto;
+  padding: 5rem 0;
+  @include size850 {
+    max-width: 68rem;
+  }
+  
+  @include desktop {
+    max-width: $desktop;
+    
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+  }
+}
+.service_texts {
+  p {
+    margin: 2rem 0;
+  }
+}
+@include desktop {
+  .block_section {
+    &:nth-child(even) {
+      .block_container {
+        .service_texts {
+          grid-column: 2 / 3;
+        }
+        .service_picture {
+          grid-column: 1 / 2;
+          grid-row: 1 / 2;
+        }
+      }
+    }
+  }  
+}

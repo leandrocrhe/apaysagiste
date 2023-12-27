@@ -1,0 +1,43 @@
+{% extends 'layout.html' %}
+{% load static %}
+{% block title %} - Testimonials{% endblock %}
+
+{% block content %}
+
+<main>
+  <div class="section_container section_container-blue padding-top">
+    <div class="container">
+      <section class="section_titles">
+        {% for home in homes %}
+        <h2>{{ home.testimonials_title }}</h2>
+        {% endfor %}
+      </section>
+    </div>
+  </div>
+  <div class="section_container section_container-testimonials">
+    <div class="container">
+      <section class="section_titles">
+        {% if user.is_authenticated %}
+        <a href="../admin/siteweb/testimonial/" class="btn_edit btn_edit-center" target="_blank">
+          <img src="{% static "img/icon/edit.svg" %}" title="Edit">
+        </a>
+        {% endif %}
+      </section>
+      <div class="testimonials_container">
+        {% for testimonial in testimonials %}
+        <div class="testimonials_card">
+          <p>{{ testimonial.testimonial }}</p>
+          <div class="testimonials_contact">
+            <p class="testimonials_name">{{ testimonial.client_name }}</p>
+            <p>{{ testimonial.client_charge }}</p>
+          </div>
+        </div>      
+        {% endfor %}
+      </div>
+
+    </div>
+  </div>
+
+</main>
+
+{% endblock %}

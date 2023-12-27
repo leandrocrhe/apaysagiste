@@ -1,0 +1,37 @@
+{% load static %}
+{% load i18n %}
+
+<!-- Menú de navegación -->
+<nav class="nav">
+  <a href="/" class="logo" title="Home">
+    <img src="{% static '/img/logo_ap.svg' %}" alt="Logo Apaysagiste">
+  </a>
+
+  <ul class="nav_menu">
+    <li class="nav_link"><a class="nav_link-a" href="{% url 'home' %}">{% trans 'Home' %}</a></li>
+    <li class="nav_link" id="services"><a class="nav_link-a" href="{% url 'preview' %}">{% trans 'Services' %}</a>
+      <ul class="nav_ul nav_services">
+        {% for menu_serv in menu_services %}
+        <li><a href="{% url menu_serv.identificador %}">{{ menu_serv.title }}</a></li>
+        {% endfor %}
+      </ul>
+    </li>
+    <li class="nav_link"><a class="nav_link-a" href="{% url 'gallery' %}">{% trans 'Gallery' %}</a></li>
+    <li class="nav_link"><a class="nav_link-a" href="{% url 'about' %}">{% trans 'About Us' %}</a></li>
+    <li class="nav_link"><a class="nav_link-a" href="{% url 'contact' %}">{% trans 'Contact Us' %}</a></li>
+    <li class="nav_link" id="languages"><a class="nav_link-a" href="#languages">{% trans 'Lenguajes' %}</a>                      
+      <ul class="nav_ul languages">
+        <li>
+          <a href="{% url 'set_language' 'en' %}">English</a></li>
+        <li>
+          <a href="{% url 'set_language' 'fr' %}">Français</a></li>
+        <li>
+          <a href="{% url 'set_language' 'es' %}">Español</a></li>
+      </ul>
+    </li>
+  </ul>
+  
+  <div class="nav_toggle">
+    <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" stroke-width="1" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M4 6l16 0" /><path d="M4 12l16 0" /><path d="M4 18l16 0" /></svg>
+  </div>
+</nav>

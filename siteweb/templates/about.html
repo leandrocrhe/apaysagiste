@@ -1,0 +1,43 @@
+{% extends 'layout.html' %}
+{% load static %}
+{% block title %} - {{banner.title}}{% endblock %}
+{% block content %}
+
+
+<div class="banner banner_40 banner_img-about observe">
+  <div class="banner_text container">
+    <h1>{{banner.title}}
+      <span class="banner_subtitle">{{ banner.subtitle }}</span>
+    </h1>
+  </div>
+</div>
+
+<main class="">
+  <div class="block_about_container">
+    {% for about in about_us %}
+
+    <section class="section_about">
+      <div class="section_about_text container">
+        <div class="flex1">
+          <h2>{{ about.title }}</h2>
+          <hr/>
+          <p>{{ about.short_text }}</p>
+          <img src="{{ about.images.url }}" alt="{{ about.images.name }}">
+        </div>
+  
+        <div class="flex2">
+          <h4>{{ about.subtitle }}</h4>
+          <div>
+            <p>{{ about.long_text|safe|linebreaks }}</p>
+          </div>        
+        </div>
+      </div>
+       
+    </section>
+    {% endfor %}
+
+  </div>
+</main>
+
+
+{% endblock %}

@@ -1,0 +1,118 @@
+{% extends 'layout.html' %}
+{% load static %}
+{% load i18n %}
+{% block content %}
+
+<!-- Hero banner -->
+{% for home in homes %}
+<div
+style="background-image: linear-gradient(90deg,  rgba(0,0,0,0.65) 0%,rgba(0,0,0,0) 100%), url({{ home.background.url }});"
+class="banner banner_100 banner_img-home observe">
+  <div class="banner_text container">
+    <h1>
+      <span>{{ home.header_decoration }}</span>
+      {{ home.header_title }}
+      <span>{{ home.header_span }}</span>
+    </h1>
+    <p>{{ home.header_text }}</p>
+    <a href="{% url 'contact' %}" class="btn btn_action">{{ home.header_button|upper }}</a>
+  </div>
+</div>
+{% endfor %}
+
+<main>
+  <!-- Garantía -->
+  {% for home in homes %}
+  <div class="section_container section_container-warranty">
+    <div class="container">
+      <section class="section_titles">
+        <h2>
+          {{home.warranty_title}}
+          <span>{{home.warranty_span}}</span>         
+        </h2>
+      </section>
+      <div class="warranty_container">
+        <div class="card scroll_card_left">
+          <div class="warranty_logo">
+            <img src="{% static '/img/logo_estimation.png' %}" alt="estimation">
+          </div>        
+          <section>
+            <h3>{{home.warranty_subtitle_estimate}}</h3>
+            <p>{{home.warranty_text_estimate}}</p>
+          </section>
+        </div>  
+        <div class="card scroll_card_right">
+          <div class="warranty_logo">
+            <img src="{% static '/img/logo_warranty.png' %}" alt="warranty">
+          </div>
+          <section>
+            <h3>{{home.warranty_subtitle_warranty}}</h3>
+            <p>{{home.warranty_text_warranty}}
+              <a href="{% url 'contact' %}" title="Contact">{{home.warranty_button}}</a>
+            </p>
+          </section>
+        </div>
+      </div>
+    </div>
+  </div>
+  {% endfor %}
+
+  <!-- Servicios -->
+  <div class="section_container section_container-services container">
+
+    <section class="section_titles">
+      {% for home in homes %}
+      <h2>
+        {{ home.service_title }} 
+        <span>{{ home.service_span }}</span>
+      </h2>
+      <p>{{ home.service_text|safe|linebreaks }}</p>
+      {% endfor %}
+    </section>
+
+    <div class="services_galery">
+
+      {% for service in services %}
+        <div class="item">
+          <section>
+            <h3>{{ service.title }}</h3>
+            <p>{{ service.description|truncatewords:15 }}</p>
+          </section>
+          <a href="{{ service.url }}/" >{{ service.button_detail }}</a>
+          <div class="image">
+            <img src="{{ service.banner.url }}" alt="{{ service.title }}">
+          </div>
+        </div>
+        {% endfor %}
+      
+    </div>
+  </div>
+
+  <!-- Testimonios -->
+  <div class="section_container section_container-testimonials">
+    <div class="container">
+      <section class="section_titles">
+        {% for home in homes %}
+        <h2>{{ home.testimonials_title }}</h2>
+        {% endfor %}
+      </section>
+
+      <div class="testimonials_container">
+        {% for testimonial in testimonials %}
+        <div class="testimonials_card">
+          <p>{{ testimonial.testimonial }}</p>
+          <div class="testimonials_contact">
+            <p class="testimonials_name">{{ testimonial.client_name }}</p>
+            <p>{{ testimonial.client_charge }}</p>
+          </div>
+        </div>      
+        {% endfor %}
+        {% if user.is_authenticated %}
+        <a href="{% url 'testimonial' %}">{% trans 'See more' %}...</a>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+
+</main>
+{% endblock %}

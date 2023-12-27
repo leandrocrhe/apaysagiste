@@ -1,0 +1,124 @@
+{% extends 'layout.html' %}
+{% block title %} - {{banner.title}}{% endblock %}
+{% block content %}
+
+<!-- Hero -->
+
+<div class="banner banner_40 banner_img-contact observe">
+  <div class="banner_text container">
+    <h1>{{ banner.title }}</h1>
+  </div>
+</div>
+
+
+<main>
+  <div class="contact-container">
+
+    <!-- Formulario -->
+    <div class="contact-section">
+      <!-- <h2>¡Contáctanos para Servicios de Paisajismo y Mejoras en el Hogar!</h2> -->
+      {% for contact in contactus %}
+      <h3>{{ contact.info_form }}</h3>
+      {% endfor %}
+      <!-- <p>Complete el formulario a continuación y nos pondremos en contacto con usted lo antes posible.</p> -->
+      <form action="{% url 'sendemail' %}" method="POST" id="contactForm">
+        {% csrf_token %}
+        {% for form in forms %}
+        
+        <div>
+          <h4>{{form.firt_title}}</h4>
+          <hr/>
+        </div>
+
+        <div class="short-input">
+          <div>
+            <label for="name">{{form.name}}:</label>
+            <input type="text" class="input-name input-icon" id="name" name="name" required>
+          </div>
+          <div>
+            <label for="lastname">{{form.last_name}}:</label>
+            <input type="text" class="input-name input-icon" id="lastname" name="lastname" required>
+          </div>
+        </div>
+
+        <div class="short-input">
+          <div>
+            <label for="phone">{{form.phone}}:</label>
+            <input type="tel" class="input-phone input-icon" id="phone" name="phone" required>            
+          </div>
+          <div>
+            <label for="email">{{form.mail}}:</label>
+            <input type="email" class="input-email input-icon" id="email" name="email" required>
+          </div>
+        </div>
+        
+        <div>
+          <h4>{{form.secound_title}}</h4>
+          <hr/>
+        </div>
+
+        <div>
+          <label for="address">{{form.address}}:</label>
+          <input type="text" class="input-location input-icon" id="address" name="address" required>
+        </div>
+
+        <div class="short-input">
+          <div>
+            <label for="apto">{{form.app}}:</label>
+            <input type="text" class="input-app input-icon" id="apto" name="apto">
+          </div>
+          <div>
+            <label for="city">{{form.city}}:</label>
+            <input type="text" class="input-city input-icon" id="city" name="city" required>
+          </div>
+          <div>
+            <label for="cpostal">{{form.postal_code}}:</label>
+            <input type="text" class="input-cp input-icon" id="cpostal" name="cpostal" required>
+          </div>
+        </div>
+          
+        <div>
+          <h4>{{form.third_title}}</h4>
+          <hr/>
+        </div>
+
+        <div>
+          <label for="message">{{form.details}}:</label>
+          <textarea id="message" class="input-message input-icon" name="message" rows="4" required></textarea>
+        </div>
+        <button type="submit" id="submitButton" class="btn btn_contact btn_action">{{form.submit}}</button>
+        {% endfor %}
+      </form>
+    </div>
+
+    <!-- Contactos -->
+    <div class="platforms-section">
+      {% for contact in contactus %}
+      <div>
+        <h3>{{ contact.text_social_networks }}:</h3>
+        <a href="{{ contact.link_facebook }}" target="_blank" class="btn_social">
+          <svg class="icon-facebook" width="32" height="32" viewBox="0 0 24 24" stroke-width="1" stroke="#000000" fill="none"stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M7 10v4h3v7h4v-7h3l1 -4h-4v-2a1 1 0 0 1 1 -1h3v-4h-3a5 5 0 0 0 -5 5v2h-3" /></svg>
+          Facebook
+        </a>
+        <a href="{{ contact.link_instagram }}" target="_blank" class="btn_social">
+          <svg class="icon-instagram" width="32" height="32" viewBox="0 0 24 24" stroke-width="1" stroke="#000000" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M4 4m0 4a4 4 0 0 1 4 -4h8a4 4 0 0 1 4 4v8a4 4 0 0 1 -4 4h-8a4 4 0 0 1 -4 -4z" /><path d="M12 12m-3 0a3 3 0 1 0 6 0a3 3 0 1 0 -6 0" /><path d="M16.5 7.5l0 .01" /></svg>
+          Instagram
+        </a>
+      </div>
+
+      <div>
+        <h3>{{ contact.text_direct_contact }}:</h3>
+        <p><strong>{{ contact.email_title }}: </strong> 
+          <a href="mailto:pavepuig@outlook.com">{{ contact.email }}</a>
+        </p>
+        <p><strong>{{ contact.phone_title }}: </strong>
+          <a href="tel:438-403-2209">{{ contact.phone }}</a>
+        </p>
+      </div>
+      {% endfor %}      
+    </div>
+    <!-- End Contactos -->
+  </div>
+</main>
+
+{% endblock %}
