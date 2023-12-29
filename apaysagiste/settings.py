@@ -148,7 +148,7 @@ STATIC_URL = 'static/'
 # MEDIA_URL = '/media/'
 if not DEBUG:
     DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
-#     STATIC_ROOT = os.path.join(BASE_DIR, 'siteweb')
+    STATIC_ROOT = os.path.join(BASE_DIR, 'siteweb')
     STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 # Default primary key field type
