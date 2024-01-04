@@ -176,7 +176,7 @@ def sendemail(request):
         message = request.POST['message']
         email_from = settings.EMAIL_HOST_USER
         # email_to = ['leandrocrhe@gmail.com','pavepuig@outlook.com']
-        email_to = ['leandrocrhe@gmail.com']
+        email_to = ['pavepuig@outlook.com']
         # send_mail(
         #     'Cliente APaysagiste',
         #     f'<strong>Nombre del cliente:</strong> {name} {apellidos}<br>'

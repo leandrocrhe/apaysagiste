@@ -14,6 +14,6 @@ def link_social_media(request):
     instagram = link.link_instagram
   return {'email': email, 'phone': phone, 'facebook': facebook, 'instagram': instagram}
 
-def location(request):
+def generals(request):
   siteObj = ServiceLocation.objects.all()
   return {'siteObj': siteObj}

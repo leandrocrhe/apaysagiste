@@ -23,13 +23,21 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 # SECURITY WARNING: keep the secret key used in production secret!
 # SECRET_KEY = os.environ.get('SECRET_KEY', default='your secret key')
+# Production
+# SECRET_KEY = 'django-insecure-_ykqzekask$-m87jr-%t-*md&x&)!*l8*3*$!z64qwu87yqf=n'
+
+# Deployment
 SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
+# Production
 # DEBUG = 'RENDER' not in os.environ
+# Deployment
 DEBUG = os.environ.get('DEBUG', 'False').lower() == 'true'
 
+# Production
 # ALLOWED_HOSTS = []
+# Deployment
 ALLOWED_HOSTS = os.environ.get('ALLOWED_HOSTS').split(' ')
 
 # RENDER_EXTERNAL_HOSTNAME = os.environ.get('RENDER_EXTERNAL_HOSTNAME')
@@ -79,7 +87,7 @@ TEMPLATES = [
                 'django.contrib.messages.context_processors.messages',
                 'siteweb.context_processors.nav_menu_services',
                 'siteweb.context_processors.link_social_media',
-                'siteweb.context_processors.location',
+                'siteweb.context_processors.generals',
             ],
         },
     },
@@ -98,8 +106,8 @@ DATABASES = {
     }
 }
 
+# Deployment
 database_url = os.environ.get('DATABASE_URL')
-
 DATABASES['default'] = dj_database_url.parse(database_url)
 
 # Password validation

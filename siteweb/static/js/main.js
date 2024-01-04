@@ -2,6 +2,18 @@ const navToggle = document.querySelector(".nav_toggle");
 const navMenu = document.querySelector(".nav_menu");
 const btnFloat = document.querySelector(".btn_top");
 
+document.addEventListener('DOMContentLoaded', function() {
+  var url = window.location.href;
+  var links = document.querySelectorAll('.nav_link a');
+
+  links.forEach(function(link) {
+    if (link.href === url) {
+      link.classList.add('active');
+    }
+  });
+});
+
+
 window.addEventListener('scroll', () => {
   const services = document.querySelector('h1');
   const mapServ = services.getBoundingClientRect();
@@ -42,7 +54,7 @@ ScrollReveal().reveal('.scroll_card_left', {
   distance: '100px' 
 });
 ScrollReveal().reveal('.scroll_card_right', {
-  delay: 900,
+  delay: 500,
   duration: 3000,
   origin: 'right',
   distance: '100px' 

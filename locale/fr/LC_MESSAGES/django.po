@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-12-25 11:48-0500\n"
-"PO-Revision-Date: 2023-12-25 14:16-0500\n"
+"POT-Creation-Date: 2024-01-03 11:04-0500\n"
+"PO-Revision-Date: 2024-01-03 11:13-0500\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: fr\n"
@@ -19,23 +19,27 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 "X-Generator: Poedit 3.4.2\n"
 
-#: .\siteweb\templates\form_nav.html:4
-msgid "English"
-msgstr "Anglais"
-
-#: .\siteweb\templates\form_nav.html:11
-msgid "French"
-msgstr "Français"
-
-#: .\siteweb\templates\form_nav.html:18
-msgid "Spanish"
-msgstr "Espagnol"
-
 #: .\siteweb\templates\index.html:111
 msgid "See more"
 msgstr "Voir plus"
 
-#: .\siteweb\templates\layout.html:51
+#: .\siteweb\templates\layout.html:11
+msgid ""
+"APaysagiste is a construction and landscaping company that offers creative "
+"and quality solutions for your home."
+msgstr ""
+"APaysagiste est une entreprise de construction et d'aménagement paysager qui "
+"propose des solutions créatives et de qualité pour votre maison."
+
+#: .\siteweb\templates\layout.html:12
+msgid ""
+"construction, landscaping, earthworks, gardens, grounds, paving, pavers, "
+"repairs, free estimate"
+msgstr ""
+"construction, aménagement paysager, terrassement, jardins, terrains, pavés, "
+"réparations, devis gratuit"
+
+#: .\siteweb\templates\layout.html:59
 msgid ""
 "Contact us and we will give you an estimate without obligation. We are at "
 "your disposal by phone, email or social networks."
@@ -43,50 +47,59 @@ msgstr ""
 "Contactez-nous et nous vous ferons un devis sans engagement. Nous sommes à "
 "votre disposition par téléphone, email ou sur les réseaux sociaux."
 
-#: .\siteweb\templates\layout.html:61
+#: .\siteweb\templates\layout.html:69
 msgid "Products"
 msgstr "Produits"
 
-#: .\siteweb\templates\layout.html:70
+#: .\siteweb\templates\layout.html:78
 msgid "Navigation"
 msgstr "Navigation"
 
-#: .\siteweb\templates\layout.html:72 .\siteweb\templates\navbar.html:11
+#: .\siteweb\templates\layout.html:80 .\siteweb\templates\navbar.html:11
 msgid "Home"
 msgstr "Accueil"
 
-#: .\siteweb\templates\layout.html:73 .\siteweb\templates\navbar.html:12
+#: .\siteweb\templates\layout.html:81 .\siteweb\templates\navbar.html:12
 msgid "Services"
 msgstr "Services"
 
-#: .\siteweb\templates\layout.html:74 .\siteweb\templates\navbar.html:26
+#: .\siteweb\templates\layout.html:82 .\siteweb\templates\navbar.html:19
 msgid "Gallery"
 msgstr "Galerie"
 
-#: .\siteweb\templates\layout.html:75
+#: .\siteweb\templates\layout.html:83
 msgid "About us"
 msgstr "A propos de nous"
 
-#: .\siteweb\templates\layout.html:80
+#: .\siteweb\templates\layout.html:88
 msgid "Contact"
 msgstr "Contact"
 
-#: .\siteweb\templates\layout.html:82
+#: .\siteweb\templates\layout.html:90
 msgid "Contact us"
 msgstr "Contactez nous"
 
-#: .\siteweb\templates\layout.html:85
+#: .\siteweb\templates\layout.html:93
 msgid "Phone"
 msgstr "Tél"
 
-#: .\siteweb\templates\navbar.html:27
+#: .\siteweb\templates\navbar.html:20
 msgid "About Us"
 msgstr "À propos de nous"
 
-#: .\siteweb\templates\navbar.html:28
+#: .\siteweb\templates\navbar.html:21
 msgid "Contact Us"
 msgstr "Contactez nous"
 
-#: .\siteweb\templates\navbar.html:29
-msgid "Lenguajes"
-msgstr ""
+#: .\siteweb\templates\navbar.html:22
+msgid "Languages"
+msgstr "Langues"
+
+#~ msgid "English"
+#~ msgstr "Anglais"
+
+#~ msgid "French"
+#~ msgstr "Français"
+
+#~ msgid "Spanish"
+#~ msgstr "Espagnol"

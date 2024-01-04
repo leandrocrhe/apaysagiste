@@ -84,5 +84,5 @@ msgid "Contact Us"
 msgstr ""
 
 #: .\siteweb\templates\navbar.html:29
-msgid "Lenguajes"
+msgid "Languages"
 msgstr ""
