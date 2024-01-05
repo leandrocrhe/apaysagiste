@@ -12,10 +12,20 @@
 
 
 <main>
+  
   <div class="contact-container">
 
     <!-- Formulario -->
     <div class="contact-section">
+
+      <div class="notification_content">
+        {% if messages %}
+        {% for message in messages %}
+        <p id='notification'>{{message}}</p>
+        {% endfor %}
+        {% endif %}
+      </div>
+      
       <!-- <h2>¡Contáctanos para Servicios de Paisajismo y Mejoras en el Hogar!</h2> -->
       {% for contact in contactus %}
       <h3>{{ contact.info_form }}</h3>
@@ -86,6 +96,7 @@
           <label for="message">{{form.details}}:</label>
           <textarea id="message" class="input-message input-icon" name="message" rows="4" required></textarea>
         </div>
+
         <button type="submit" id="submitButton" class="btn btn_contact btn_action">{{form.submit}}</button>
         {% endfor %}
       </form>
@@ -120,5 +131,17 @@
     <!-- End Contactos -->
   </div>
 </main>
+
+{% endblock %}
+
+{% block jquery %}
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+
+<script>
+  // Ocultar el mensaje después de 5000 milisegundos (5 segundos)
+  setTimeout(function() {
+      $('#notification').fadeOut('slow');
+  }, 5000);
+</script>
 
 {% endblock %}

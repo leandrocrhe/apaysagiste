@@ -9,6 +9,7 @@ from django.urls.base import resolve, reverse
 from django.urls.exceptions import Resolver404
 import uuid
 from django.core.exceptions import ValidationError
+from django.contrib import messages
 
 
 def set_language(request, language):
@@ -175,22 +176,8 @@ def sendemail(request):
         cpostal = request.POST['cpostal']
         message = request.POST['message']
         email_from = settings.EMAIL_HOST_USER
-        # email_to = ['leandrocrhe@gmail.com','pavepuig@outlook.com']
-        email_to = ['pavepuig@outlook.com']
-        # send_mail(
-        #     'Cliente APaysagiste',
-        #     f'<strong>Nombre del cliente:</strong> {name} {apellidos}<br>'
-        #     f'<strong>Teléfono:</strong> {telefono}<br>'
-        #     f'<strong>Correo Electrónico:</strong> {email}<br>'
-        #     f'<strong>Dirección:</strong> {address}.<br>'
-        #     f'<strong>Apartamento:</strong> {app}<br>'
-        #     f'<strong>Ciudad:</strong> {city}<br>'
-        #     f'<strong>Código Postal:</strong> {cpostal}<br><br>'
-        #     f'<strong>Detalles del Proyecto:</strong><br>{message}<br>',
-        #     email_from,
-        #     email_to,
-        #     fail_silently=False)
-        
+        email_to = ['leandrocrhe@gmail.com']
+        # email_to = ['pavepuig@outlook.com']        
         
         html_message = f'<strong>Nombre del cliente:</strong> {name} {apellidos}<br>' \
                        f'<strong>Teléfono:</strong> {telefono}<br>' \
@@ -200,16 +187,18 @@ def sendemail(request):
                        f'<strong>Ciudad:</strong> {city}<br>' \
                        f'<strong>Código Postal:</strong> {cpostal}<br><br>' \
                        f'<strong>Detalles del Proyecto:</strong><br>{message}'
-        send_mail(
-            'Cliente APaysagiste',
-            '',
-            email_from,
-            email_to,
-            fail_silently=False,
-            html_message=html_message
-        )
-                
         
-        print('Correo enviado con exito') 
-        return render(request, "correo_enviado.html")
+        try:
+            send_mail(
+                'Cliente APaysagiste',
+                '',
+                email_from,
+                email_to,
+                fail_silently=False,
+                html_message=html_message
+            )                
+            messages.success(request, "Mail sent successfully")
+        except Exception as e:
+            messages.error(request, f"Error sending mail: {str(e)}")
+            
     return redirect('contact')

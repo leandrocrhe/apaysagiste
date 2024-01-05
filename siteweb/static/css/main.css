@@ -222,8 +222,8 @@ img, svg {
   to {
     box-shadow: 0px 5px 50px -5px rgba(0, 0, 0, 0.1), 0px 0px 0 1px rgba(0, 0, 0, 0.3);
     background-color: rgba(13, 58, 95, 0.38);
-    backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
   }
 }
 .nav_menu .nav_link {
@@ -1046,6 +1046,22 @@ textarea:focus {
 }
 .platforms-section div:nth-child(2) p {
   margin-bottom: 1.5rem;
+}
+
+.notification_content {
+  position: relative;
+}
+
+#notification {
+  text-align: center;
+  width: 100%;
+  padding: 1.5rem 0;
+  color: #eeeeee;
+  border-radius: 1rem;
+  background-color: #18A5BF;
+  margin: 0 auto;
+  position: absolute;
+  top: -6rem;
 }
 
 .footer_widget {

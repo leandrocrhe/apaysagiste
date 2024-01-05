@@ -169,3 +169,17 @@ textarea:focus {
     }
   }
 }
+.notification_content {
+  position: relative;
+}
+#notification {
+  text-align: center;
+  width: 100%;
+  padding: 1.5rem 0;
+  color: $white1;
+  border-radius: 1rem;
+  background-color: $pool1;
+  margin: 0 auto;
+  position: absolute;
+  top: -6rem;
+}
