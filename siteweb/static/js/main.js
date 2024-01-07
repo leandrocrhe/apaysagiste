@@ -22,7 +22,7 @@ navToggle.addEventListener("click", () => {
 
 ScrollReveal().reveal('.banner_text', {
   duration: 3000,
-  origin: 'bottom',
+  origin: 'rigth',
   distance: '68px' 
 });
 ScrollReveal().reveal('.section_titles', {
