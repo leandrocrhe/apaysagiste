@@ -6,6 +6,17 @@ from cloudinary.models import CloudinaryField
 from django.db.models.signals import pre_delete
 import cloudinary
 
+class BaseModel(models.Model):
+    class Meta:
+        abstract = True
+
+    @classmethod
+    def register_pre_delete(cls, image_field_name):
+        @receiver(pre_delete, sender=cls)
+        def photo_delete(sender, instance, **kwargs):
+            image_field = getattr(instance, image_field_name)
+            cloudinary.uploader.destroy(image_field.public_id)
+
 
 class Home(models.Model):
     header_decoration = models.CharField(max_length=100)
@@ -24,7 +35,9 @@ class Home(models.Model):
     service_span = models.CharField(max_length=100, default="service title span")
     service_text = models.TextField(default="service text paragraph")
     testimonials_title = models.CharField(max_length=50, default='Testimonials')
-    background = models.ImageField(upload_to='home', null=True)
+    background = CloudinaryField('home', folder='home', null=True)
+     
+BaseModel.register_pre_delete('background')
 
 class Testimonial(models.Model):
     testimonial = models.TextField(max_length=562)
@@ -34,7 +47,7 @@ class Testimonial(models.Model):
 class Service(models.Model):
     title = models.CharField(max_length=50, default='Service')
     description = models.TextField(max_length=150, blank=True)
-    banner = models.ImageField(upload_to='banner', null=True)
+    banner = CloudinaryField('banner', folder='banner', null=True)
     url = models.CharField(max_length=25, blank=True)
     button_detail = models.CharField(max_length=18, verbose_name='View details button', default="View details")
     identificador = models.CharField(max_length=20, blank=True)
@@ -45,61 +58,63 @@ class RepairService(models.Model):
     title = models.CharField(max_length=60, default="Title Name")
     subtitle = models.CharField(max_length=100, default="Text of Subtitle", blank=True)
     description = models.TextField(default="Descriptive text of this topic")
-    thumbnail = models.ImageField(upload_to='services/repair', null=True, blank=True)
+    thumbnail = CloudinaryField('repair', folder='services/repair', null=True, blank=True)
         
 class ConcreteService(models.Model):
     title = models.CharField(max_length=60, default="Title Name")
     subtitle = models.CharField(max_length=100, default="Text of Subtitle", blank=True)
     description = models.TextField(default="Descriptive text of this topic")
-    thumbnail = models.ImageField(upload_to='services/concrete', null=True, blank=True)
+    thumbnail = CloudinaryField('concrete', folder='services/concrete', null=True, blank=True)
         
 class GarageService(models.Model):
     title = models.CharField(max_length=60, default="Title Name")
     subtitle = models.CharField(max_length=100, default="Text of Subtitle", blank=True)
     description = models.TextField(default="Descriptive text of this topic")
-    thumbnail = models.ImageField(upload_to='services/garage', null=True, blank=True)
+    thumbnail = CloudinaryField('garage', folder='services/garage', null=True, blank=True)
         
 class PlatformService(models.Model):
     title = models.CharField(max_length=60, default="Title Name")
     subtitle = models.CharField(max_length=100, default="Text of Subtitle", blank=True)
     description = models.TextField(default="Descriptive text of this topic")
-    thumbnail = models.ImageField(upload_to='services/platform', null=True, blank=True)
+    thumbnail = CloudinaryField('platform', folder='services/platform', null=True, blank=True)
     
 class PavingService(models.Model):
     title = models.CharField(max_length=60, default="Title Name")
     subtitle = models.CharField(max_length=100, default="Text of Subtitle", blank=True)
     description = models.TextField(default="Descriptive text of this topic")
-    thumbnail = models.ImageField(upload_to='services/pavers_asphalt', null=True, blank=True)
+    thumbnail = CloudinaryField('pavers_asphalt', folder='services/pavers_asphalt', null=True, blank=True)
     
 class CascadesService(models.Model):
     title = models.CharField(max_length=60, default="Title Name")
     subtitle = models.CharField(max_length=100, default="Text of Subtitle", blank=True)
     description = models.TextField(default="Descriptive text of this topic")
-    thumbnail = models.ImageField(upload_to='services/cascades_chimneys', null=True, blank=True)
+    thumbnail = CloudinaryField('cascades_chimneys', folder='services/cascades_chimneys', null=True, blank=True)
     
 class PlantingService(models.Model):
     title = models.CharField(max_length=60, default="Title Name")
     subtitle = models.CharField(max_length=100, default="Text of Subtitle", blank=True)
     description = models.TextField(default="Descriptive text of this topic")
-    thumbnail = models.ImageField(upload_to='services/lawn_planting', null=True, blank=True)
+    thumbnail = CloudinaryField('lawn_planting', folder='services/lawn_planting', null=True, blank=True)
     
 class PoolService(models.Model):
     title = models.CharField(max_length=60, default="Title Name")
     subtitle = models.CharField(max_length=100, default="Text of Subtitle", blank=True)
     description = models.TextField(default="Descriptive text of this topic")
-    thumbnail = models.ImageField(upload_to='services/pool', null=True, blank=True)
+    thumbnail = CloudinaryField('pool', folder='services/pool', null=True, blank=True)
     
 class WallsService(models.Model):
     title = models.CharField(max_length=60, default="Title Name")
     subtitle = models.CharField(max_length=100, default="Text of Subtitle", blank=True)
     description = models.TextField(default="Descriptive text of this topic")
-    thumbnail = models.ImageField(upload_to='services/walls', null=True, blank=True)
+    thumbnail = CloudinaryField('walls', folder='services/walls', null=True, blank=True)
     
 class LightingService(models.Model):
     title = models.CharField(max_length=60, default="Title Name")
     subtitle = models.CharField(max_length=100, default="Text of Subtitle", blank=True)
     description = models.TextField(default="Descriptive text of this topic")
-    thumbnail = models.ImageField(upload_to='services/lighting', null=True, blank=True)
+    thumbnail = CloudinaryField('lighting', folder='services/lighting', null=True, blank=True)
+    
+BaseModel.register_pre_delete('thumbnail')
 
 # END SERVICES
 
@@ -111,9 +126,7 @@ class Gallery(models.Model):
         formatted_date = timezone.localtime(self.created_at).strftime('%d %B %Y')
         return f"Image | Date: {formatted_date} - id: {self.id}"
     
-@receiver(pre_delete, sender=Gallery)
-def photo_delete(sender, instance, **kwargs):
-    cloudinary.uploader.destroy(instance.images.public_id)
+BaseModel.register_pre_delete('images')
     
 
 class About(models.Model):
@@ -123,7 +136,6 @@ class About(models.Model):
     long_text = models.TextField(default='A more long text')
     images = models.FileField(upload_to='about', null=True, blank=True, storage=RawMediaCloudinaryStorage())
     
-
 class Contact(models.Model):
     info_form = models.TextField(max_length=100, blank=True)
     text_social_networks = models.CharField(max_length=50, default='Connect with us on social networks')
@@ -153,8 +165,10 @@ class Form(models.Model):
 class BannerPage(models.Model):
     title = models.CharField(max_length=50, default="Title Name")
     subtitle = models.TextField(max_length=150, blank=True)
-    banner = models.ImageField(upload_to='banner', blank=True)
+    banner = CloudinaryField('banner', folder='banner', blank=True)
     identificador = models.CharField(max_length=20, blank=True)
+    
+BaseModel.register_pre_delete('banner')
     
     
 class ServiceLocation(models.Model):

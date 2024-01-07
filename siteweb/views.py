@@ -35,7 +35,13 @@ def home(request):
     homes = Home.objects.all()
     services = Service.objects.all()
     testimonials = Testimonial.objects.all()
-    return render(request, 'index.html', {'homes': homes, 'services': services, 'testimonials': testimonials})
+    
+    img_transformed_urls = [cloudinary.utils.cloudinary_url(img.banner.public_id, height=300, width=428, crop='crop', fetch_format='auto')[0] for img in services]
+    
+    # Combinando las listas para pasarlas a la plantilla
+    services_img_urls = zip(services, img_transformed_urls)
+    
+    return render(request, 'index.html', {'homes': homes, 'services_img_urls': services_img_urls, 'testimonials': testimonials})
 
 def testimonial(request):
     homes = Home.objects.all()
@@ -45,7 +51,13 @@ def testimonial(request):
 def preview(request):
     homes = Home.objects.all()
     services = Service.objects.all()
-    return render(request, 'services_gallery.html', {'services': services, 'homes': homes})
+    
+    img_transformed_urls = [cloudinary.utils.cloudinary_url(img.banner.public_id, height=300, width=428, crop='crop', fetch_format='auto')[0] for img in services]
+    
+    # Combinando las listas para pasarlas a la plantilla
+    services_img_urls = zip(services, img_transformed_urls)
+    
+    return render(request, 'services_gallery.html', {'homes': homes, 'services_img_urls': services_img_urls})
 
 def identificador(name, obj):
     thisObject = obj.objects.all()
@@ -121,7 +133,6 @@ def gallery(request):
         
     images = Gallery.objects.all()
     # Obteniendo las URLs originales  y transformadas de las imágenes
-    # img_original_urls = [img.images.url for img in images]
     img_original_urls = [cloudinary.utils.cloudinary_url(img.images.public_id, crop='scale', fetch_format='auto')[0] for img in images]
     img_transformed_urls = [cloudinary.utils.cloudinary_url(img.images.public_id, width=375, crop='scale', fetch_format='auto')[0] for img in images]
     

@@ -20,25 +20,25 @@
     </div>
   </div>
 
-    <!-- Servicios -->
-    <div class="section_container section_container-services container">  
-      <div class="services_galery">
+  <!-- Servicios -->
+  <div class="section_container section_container-services container">  
+    <div class="services_galery">
 
-        {% for service in services %}
-        <div class="item">
-          <section>
-            <h3>{{ service.title }}</h3>
-            <p>{{ service.description|truncatewords:15 }}</p>
-          </section>
-          <a href="{% url service.url %}" class="">{{ service.button_detail }}</a>
-          <div class="image">
-            <img src="{{ service.banner.url }}" alt="{{ service.title }}">
-          </div>
+      {% for services, img_transformed_urls in services_img_urls %}
+      <div class="item">
+        <section>
+          <h3>{{ services.title }}</h3>
+          <p>{{ services.description|truncatewords:15 }}</p>
+        </section>
+        <a href="{% url services.url %}" class="">{{ services.button_detail }}</a>
+        <div class="image">
+          <img src="{{ img_transformed_urls }}" alt="{{ services.title }}" loading="lazy">
         </div>
-        {% endfor %}      
-
       </div>
+      {% endfor %}      
+
     </div>
+  </div>
   
 </main>
 
