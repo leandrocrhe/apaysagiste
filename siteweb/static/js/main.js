@@ -19,11 +19,7 @@ navToggle.addEventListener("click", () => {
   navMenu.classList.toggle("nav_menu-visible");
 });
 
-ScrollReveal().reveal('.nav', {
-  duration: 3000,
-  origin: 'bottom',
-  distance: '-68px' 
-});
+
 ScrollReveal().reveal('.banner_text', {
   duration: 3000,
   origin: 'bottom',
