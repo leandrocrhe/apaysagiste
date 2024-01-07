@@ -402,6 +402,7 @@ img, svg {
   justify-content: center;
   align-items: flex-start;
   height: 100%;
+  overflow: hidden;
 }
 .banner_text h1 {
   display: flex;
