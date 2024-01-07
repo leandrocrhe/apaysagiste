@@ -1,6 +1,9 @@
 .container form {
-  display: flex;
   justify-content: center;
+  
+  @include size615 {
+    display: flex;    
+  }
 
   input[type="file"] {
     color: white;
@@ -10,7 +13,7 @@
   }
 
   button {
-    padding: 0 3rem;
+    padding: 1rem 3rem;
     cursor: pointer;
   }
 }
@@ -21,7 +24,7 @@
   column-gap: 0.5rem;
 
   img {
-    max-width: 100%;
+    width: 100%;
     margin-bottom: 0.5rem;
     outline: 2px solid #fff;
     transition: all 0.3s ease-in-out;

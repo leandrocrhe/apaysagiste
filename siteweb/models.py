@@ -2,6 +2,7 @@ from django.dispatch import receiver
 from django.utils import timezone
 from django.db import models
 from cloudinary_storage.storage import RawMediaCloudinaryStorage
+from cloudinary.models import CloudinaryField
 from django.db.models.signals import pre_delete
 import cloudinary
 
@@ -103,11 +104,14 @@ class LightingService(models.Model):
 # END SERVICES
 
 class Gallery(models.Model):
-    images = models.ImageField(upload_to='gallery')
+    images = CloudinaryField('gallery', folder='gallery')
     created_at = models.DateTimeField(auto_now_add=True, null=True, blank=True)    
 
+    # def __str__(self):
+    #     return timezone.localtime(self.created_at).strftime('%Y-%m-%d %H:%M:%S')
     def __str__(self):
-        return timezone.localtime(self.created_at).strftime('%Y-%m-%d %H:%M:%S')
+        formatted_date = timezone.localtime(self.created_at).strftime('%d %B %Y')
+        return f"Image | Date: {formatted_date} - id: {self.id}"
     
 @receiver(pre_delete, sender=Gallery)
 def photo_delete(sender, instance, **kwargs):

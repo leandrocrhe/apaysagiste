@@ -10,6 +10,7 @@ from django.urls.exceptions import Resolver404
 import uuid
 from django.core.exceptions import ValidationError
 from django.contrib import messages
+import cloudinary
 
 
 def set_language(request, language):
@@ -116,10 +117,26 @@ def services10(request):
 # END SERVICES
 
 def gallery(request):
+    thisService = identificador('gallery', BannerPage)
+        
     images = Gallery.objects.all()
-    thisService = identificador('gallery', BannerPage)    
-    print(thisService)
-    return render(request, 'gallery.html', {'thisService': thisService, 'images': images})
+    # Obteniendo las URLs originales  y transformadas de las imágenes
+    # img_original_urls = [img.images.url for img in images]
+    img_original_urls = [cloudinary.utils.cloudinary_url(img.images.public_id, crop='scale', fetch_format='auto')[0] for img in images]
+    img_transformed_urls = [cloudinary.utils.cloudinary_url(img.images.public_id, width=375, crop='scale', fetch_format='auto')[0] for img in images]
+    
+    # Obtén las dimensiones de las imágenes
+    img_dimensions = []
+    for img in images:
+        response = cloudinary.api.resource(img.images.public_id)
+        width = response.get('width', '')
+        height = response.get('height', '')
+        img_dimensions.append((width, height, img.id))
+
+    # Combinando las listas para pasarlas a la plantilla
+    img_urls = zip(img_original_urls, img_transformed_urls, img_dimensions)
+
+    return render(request, 'gallery.html', {'thisService': thisService, 'img_urls': img_urls})
 
 def uploadMultiImgs(request):
     if request.method == "POST":
@@ -139,16 +156,12 @@ def uploadMultiImgs(request):
             print(f"Error al procesar archivos: {e}")
     return redirect('gallery')
 
+def delete_image(request, img_id):
+    # Eliminar la imagen de la galeria
+    gallery_instance = Gallery.objects.get(pk=img_id)
+    gallery_instance.delete()
 
-
-
-# def delete_image(request, pk):
-#     images = get_object_or_404(Gallery, pk=pk)
-#     images = Gallery.objects.get(pk=pk)
-#     print(images)
-#     images.delete()
-#     return redirect('/gallery/')
-
+    return redirect('gallery')
 
 
 

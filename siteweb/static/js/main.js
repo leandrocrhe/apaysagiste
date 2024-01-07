@@ -2,29 +2,20 @@ const navToggle = document.querySelector(".nav_toggle");
 const navMenu = document.querySelector(".nav_menu");
 const btnFloat = document.querySelector(".btn_top");
 
-document.addEventListener('DOMContentLoaded', function() {
-  var url = window.location.href;
-  var links = document.querySelectorAll('.nav_link a');
+document.addEventListener('DOMContentLoaded', () => {
+  const url = window.location.href;
+  const links = document.querySelectorAll('.nav_link a');
 
-  links.forEach(function(link) {
-    if (link.href === url) {
-      link.classList.add('active');
-    }
-  });
+  links.forEach(link => link.classList.toggle('active', link.href === url));
 });
-
 
 window.addEventListener('scroll', () => {
   const services = document.querySelector('h1');
   const mapServ = services.getBoundingClientRect();
-  if (mapServ.top > -10) {
-    btnFloat.classList.add("btn_top-disabled");
-  } else {
-    btnFloat.classList.remove("btn_top-disabled"); 
-  }
+  btnFloat.classList.toggle("btn_top-disabled", mapServ.top > -10);
 });
 
-navToggle.addEventListener("click", function() {
+navToggle.addEventListener("click", () => {
   navMenu.classList.toggle("nav_menu-visible");
 });
 
@@ -60,7 +51,8 @@ ScrollReveal().reveal('.scroll_card_right', {
   distance: '100px' 
 });
 ScrollReveal().reveal('.services_galery', {
-  delay: 500,  
+  delay: 500,
+  duration: 2000,  
   origin: 'bottom',
   distance: '100px' 
 });
@@ -85,11 +77,12 @@ ScrollReveal().reveal('.service_picture', {
   origin: 'left',
   distance: '100px'
 });
-ScrollReveal().reveal('.gallery', {
-  delay: 500,  
-  origin: 'bottom',
-  distance: '100px'
-});
+// ScrollReveal().reveal('.gallery', {
+//   delay: 500, 
+//   duration: 2000, 
+//   origin: 'bottom',
+//   distance: '100px'
+// });
 ScrollReveal().reveal('.flex1', {
   delay: 100,
   duration: 3000,
@@ -102,7 +95,9 @@ ScrollReveal().reveal('.flex2', {
   origin: 'rigth',
   distance: '100px' 
 });
+
 ScrollReveal().reveal('.contact-container', {delay: 500});
+
 
 /*
 document.addEventListener('DOMContentLoaded', function(){

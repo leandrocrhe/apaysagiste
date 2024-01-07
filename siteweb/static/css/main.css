@@ -780,8 +780,12 @@ img, svg {
   }
 }
 .container form {
-  display: flex;
   justify-content: center;
+}
+@media (min-width: 615px) {
+  .container form {
+    display: flex;
+  }
 }
 .container form input[type=file] {
   color: white;
@@ -790,7 +794,7 @@ img, svg {
   background-color: #4d4d4d;
 }
 .container form button {
-  padding: 0 3rem;
+  padding: 1rem 3rem;
   cursor: pointer;
 }
 
@@ -802,7 +806,7 @@ img, svg {
        column-gap: 0.5rem;
 }
 .gallery img {
-  max-width: 100%;
+  width: 100%;
   margin-bottom: 0.5rem;
   outline: 2px solid #fff;
   transition: all 0.3s ease-in-out;

@@ -1,7 +1,6 @@
 {% extends 'layout.html' %}
 {% load static %}
 {% block title %} - Gallery{% endblock %}
-{% load cloudinary %}
 
 {% block csslightgallery %}
   <!-- lightgallery -->
@@ -46,52 +45,12 @@
 
   <!-- Galería -->
   <div class="gallery" id="gallery">
-    <a data-lg-size="1927-900" href="{% static '/img/gallery/img01.jpg' %}">
-      <img src="{% static '/img/gallery/img01.jpg' %}" alt="">
-    </a>
-    <a data-lg-size="1927-900" href="{% static '/img/gallery/img02.jpg' %}">
-      <img src="{% static '/img/gallery/img02.jpg' %}" alt="">
-    </a>
-    <a data-lg-size="1927-900" href="{% static '/img/gallery/img03.jpg' %}">
-      <img src="{% static '/img/gallery/img03.jpg' %}" alt="">
-    </a>
-    <a data-lg-size="1927-900" href="{% static '/img/gallery/img04.jpg' %}">
-      <img src="{% static '/img/gallery/img04.jpg' %}" alt="">
-    </a>
-    <a data-lg-size="900-1551" href="{% static '/img/gallery/img05.jpg' %}">
-      <img src="{% static '/img/gallery/img05.jpg' %}" alt="">
-    </a>
-    <a data-lg-size="1927-900" href="{% static '/img/gallery/img06.jpg' %}">
-      <img src="{% static '/img/gallery/img06.jpg' %}" alt="">
-    </a>
-    <a data-lg-size="1927-900" href="{% static '/img/gallery/img07.jpg' %}">
-      <img src="{% static '/img/gallery/img07.jpg' %}" alt="">
-    </a>
-    <a data-lg-size="1927-900" href="{% static '/img/gallery/img08.jpg' %}">
-      <img src="{% static '/img/gallery/img08.jpg' %}" alt="">
-    </a>
-    <a data-lg-size="1927-900" href="{% static '/img/gallery/img09.jpg' %}">
-      <img src="{% static '/img/gallery/img09.jpg' %}" alt="">
-    </a>
-    <a data-lg-size="1927-900" href="{% static '/img/gallery/img10.jpg' %}">
-      <img src="{% static '/img/gallery/img10.jpg' %}" alt="">
-    </a>
-    <a data-lg-size="1927-900" href="{% static '/img/gallery/img11.jpg' %}">
-      <img src="{% static '/img/gallery/img11.jpg' %}" alt="">
-    </a>
-    <a data-lg-size="1927-900" href="{% static '/img/gallery/img12.jpg' %}">
-      <img src="{% static '/img/gallery/img12.jpg' %}" alt="">
-    </a>
-    <a data-lg-size="768-1024" href="{% static '/img/gallery/img13.jpg' %}">
-      <img src="{% static '/img/gallery/img13.jpg' %}" alt="">
-    </a>
-    {% for img in images %}    
-    <a data-lg-size="" href="{{ img.images.url }}">
-      
-      {% comment %} {% cl_image_tag img.images width=200 height=150 %} {% endcomment %}
-      {% cloudinary img.images.url crop=thumb %}
-      {% comment %} <img src="{{ img.images.url }}" alt="{{ img.images.name }}"> {% endcomment %}
-    </a>
+    {% for img_original_url, img_transformed_url, img_dimensions in img_urls %}
+    
+      <a data-lg-size="{{ img_dimensions.0 }}-{{ img_dimensions.1 }}" href="{{ img_original_url }}">
+        <img src="{{ img_transformed_url }}" alt="Imagen" loading="lazy">
+      </a>
+    
     {% endfor %}
   </div>
   

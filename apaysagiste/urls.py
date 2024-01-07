@@ -46,7 +46,7 @@ urlpatterns = [
         
     path('gallery/', views.gallery, name='gallery'),
     path('upload/', views.uploadMultiImgs, name='uploadMultiImgs'),
-    # path('delete/<int:pk>/', views.delete_image, name='delete_image'),    
+    path('delete_image/<int:img_id>/', views.delete_image, name='delete_image'),    
     path('about/', views.about, name='about'),
     path('contact/', views.contact, name='contact'),
     path('mail/', views.sendemail, name='sendemail'),
