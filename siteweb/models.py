@@ -107,8 +107,6 @@ class Gallery(models.Model):
     images = CloudinaryField('gallery', folder='gallery')
     created_at = models.DateTimeField(auto_now_add=True, null=True, blank=True)    
 
-    # def __str__(self):
-    #     return timezone.localtime(self.created_at).strftime('%Y-%m-%d %H:%M:%S')
     def __str__(self):
         formatted_date = timezone.localtime(self.created_at).strftime('%d %B %Y')
         return f"Image | Date: {formatted_date} - id: {self.id}"
