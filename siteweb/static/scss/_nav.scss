@@ -1,4 +1,4 @@
-/** Navegación  */
+/* Navegación  */
 
 .nav {
   position: fixed;
@@ -11,13 +11,14 @@
   align-items: center;
   z-index: 2;
   @include size615 {
-      display: block;
+    display: block;
   }
   @include size850 {
       display: flex;
   }
   @include size930 {
-      padding: 0 8%;
+    height: 7rem;
+    padding: 0 8%;
   }
 }
 
