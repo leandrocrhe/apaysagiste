@@ -13,7 +13,7 @@ body {
   font-family: $fontParagraf;
   background-color: #f4f4f4;
 }
-main {
+main, .banner_100, .banner_40 {
   overflow: hidden;
 }
 .container {
@@ -114,7 +114,7 @@ img, svg {
 }
 .logo {
   width: 20rem;
-  height: 6rem;
+  height: 6.5rem;
   display: flex;
   align-items: center;
 
@@ -125,7 +125,7 @@ img, svg {
   img {
     width: 100%;
     height: 100%;
-    margin: 2% 0;
+    padding: 2% 0;
   }
 }
 .section_container {

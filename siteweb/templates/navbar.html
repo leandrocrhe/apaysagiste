@@ -9,7 +9,7 @@
 
   <ul class="nav_menu animation_blur">
     <li class="nav_link"><a class="nav_link-a" href="{% url 'home' %}">{% trans 'Home' %}</a></li>
-    <li class="nav_link" id="services"><a class="nav_link-a" href="{% url 'preview' %}">{% trans 'Services' %}</a>
+    <li class="nav_link" id="services"><a class="nav_link-a" href="#services">{% trans 'Services' %}</a>
       <ul class="nav_ul nav_services">
         {% for menu_serv in menu_services %}
         <li><a href="{% url menu_serv.identificador %}">{{ menu_serv.title }}</a></li>

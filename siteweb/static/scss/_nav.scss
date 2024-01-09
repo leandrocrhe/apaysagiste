@@ -22,30 +22,32 @@
   }
 }
 
+// Efecto Scroll
 .animation_blur {
   animation: blur linear both;
   animation-timeline: scroll();
   animation-range: 0 1000px;
 }
 
-.nav_menu {   // ul
-  width: 29rem;
+.nav_menu {
   display: flex;
-  border-radius: 3rem;
-  background-color: rgba(0, 0, 0, 0.660);
+  max-height: calc(100vh - 6.5rem);
+  overflow-y: auto;
+  background-color: rgba(0, 0, 0, 0.830);
   flex-direction: column;
   position: fixed;
-  top: 7.23rem;
+  top: 6.6rem;
   right: -30rem;
   transition: .5s;
   @include size615 {
+    border-radius: 3rem;
     width: auto;
     position: initial;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
   }
-  
+
   @keyframes blur {
     to {
       box-shadow:
@@ -56,23 +58,38 @@
       backdrop-filter: blur(10px);
     }
   }
-  
+
+  .nav_link {
+    &:hover {
+      background-color: rgba(37, 37, 37, 0.64);
+    }
+  }
+
   .nav_link {        // ul li
     position: relative;   
-
     &:first-child {
-      border-top-left-radius: 3rem;
-      border-bottom-left-radius: 3rem;
+      @include size615 {
+        border-top-left-radius: 3rem;
+        border-bottom-left-radius: 3rem;
+        padding-left: 1.5rem;
+      }
     }
     &:last-child {
-      border-top-right-radius: 3rem;
-      border-bottom-right-radius: 3rem;
+      @include size615 {
+        border-top-right-radius: 3rem;
+        border-bottom-right-radius: 3rem;
+        padding-right: 1.5rem
+      }
     }
-    &:hover {
-      background-color: rgba(13, 58, 95, 0.6);
-      .nav_ul {
-        max-height: 1000%;
-        display: block;
+
+    // AL pasar el mouse por arriba del menú Servicio y Lenguaje se despliegan
+    @include size615 {
+      &:hover {
+        // background-color: rgba(37, 37, 37, 0.64);
+        .nav_ul {
+          max-height: 1000%;
+          display: block
+        }
       }
     }
 
@@ -82,13 +99,16 @@
       padding: 1.5rem 1.5vmax;
       display: block;
       transition: .3s;
+      &:hover {
+        color: $yellow;
+      }
     }
   }
 }
 
 .nav_menu-visible {
   right: 0;
-  .nav_link {        // ul li
+  .nav_link {
     .nav_ul {
       a {
         padding: 1.2rem 1.5vmax;
@@ -101,38 +121,29 @@
       background-color: transparent;
     }
     &:hover {
+      @include size615 {
+        transform: scale(1.05);
+      }
       background-color: rgba(0, 0, 0, 0.75);
-      -webkit-box-shadow: 0px 3px 5px 0px rgba(0,0,0,0.5);
-      -moz-box-shadow: 0px 3px 5px 0px rgba(0,0,0,0.5);
-      box-shadow: 0px 3px 5px 0px rgba(0,0,0,0.5);
     }
-  }
-}
-
-.nav_link-a {
-  &:hover {
-    transform: scale(1.05);
   }
 }
 
 .nav_ul {
   max-height: 0;
-  padding: 0 0.5rem;
-  overflow: hidden;
   position: relative;
-  left: 0;
+  overflow: hidden;
   transition: .5s;
   @include size615 {
     position: absolute;
   }
   a {
     white-space: nowrap;
-    background-color: rgba(27, 27, 27, 0.9);
+    background-color: rgba(27, 27, 27, 0.95);
 
     &:hover {
       color: $yellow;
-      background-color: rgba(0, 0, 0, 0.75);
-      transform: scale(1.02) translateX(-2px);
+      background-color: rgba(20, 20, 20);
       -webkit-box-shadow: 0px 3px 5px 0px rgba(0,0,0,0.5);
       -moz-box-shadow: 0px 3px 5px 0px rgba(0,0,0,0.5);
       box-shadow: 0px 3px 5px 0px rgba(0,0,0,0.5);
@@ -140,8 +151,17 @@
   }
 }
 
+#services:target .nav_services {
+  max-height: 48.5rem;
+}
+#languages:target .languages {
+  max-height: 15rem;
+}
+
 .languages {
   width: 100%;
+  min-width: 12.5rem;
+  text-align: center;
 }
 
 .nav_toggle {

@@ -10,9 +10,10 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 window.addEventListener('scroll', () => {
-  const services = document.querySelector('h1');
+  const services = document.querySelector('.observe');
   const mapServ = services.getBoundingClientRect();
-  btnFloat.classList.toggle("btn_top-disabled", mapServ.top > -10);
+  console.log(mapServ)
+  btnFloat.classList.toggle("btn_top-disabled", mapServ.top > -650);
 });
 
 navToggle.addEventListener("click", () => {
@@ -22,7 +23,7 @@ navToggle.addEventListener("click", () => {
 
 ScrollReveal().reveal('.banner_text', {
   duration: 3000,
-  origin: 'rigth',
+  origin: 'bottom',
   distance: '68px' 
 });
 ScrollReveal().reveal('.section_titles', {

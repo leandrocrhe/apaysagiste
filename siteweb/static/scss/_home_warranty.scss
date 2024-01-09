@@ -12,6 +12,18 @@
     }
   }
 }
+@include size615 {
+  .section_container-blue {
+    .section_titles {
+      margin-top: 4rem;
+
+      @include size850 {
+        margin-top: 0;
+    }
+  }
+}
+
+}
 .warranty_container {
   padding: 2rem 0;
   @include grid(1, 2rem);
