@@ -15,11 +15,19 @@ hr {
   }
 }
 
+.contact-section {
+  padding: 0 2rem 2rem;
+}
+.platforms-section {
+  padding: 2rem;
+}
 .contact-section,
 .platforms-section {
   width: 100%;
-  padding: 20px;
-  margin-bottom: 20px;  
+  margin-bottom: 2rem;
+  @include size850 {
+    padding: 2rem;
+  }  
 }
 
 @include size850 {
@@ -105,8 +113,8 @@ textarea:focus {
 
 .btn_contact {
   justify-self: center;
-  padding-right: 10rem;
-  padding-left: 10rem;  
+  width: 100%;
+  max-width: 40rem;
   cursor: pointer;
 }
 
