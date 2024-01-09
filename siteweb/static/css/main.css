@@ -218,6 +218,7 @@ img, svg {
 }
 @media (min-width: 615px) {
   .nav_menu {
+    overflow-y: revert;
     border-radius: 3rem;
     width: auto;
     position: initial;
