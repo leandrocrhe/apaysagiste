@@ -50,13 +50,14 @@ li {
 a {
   text-decoration: none;
 }
-img, svg {
+img {
   max-width: 100%;
   display: block;
 }
 .btn {
   text-align: center;
-  min-width: 21.2rem;
+  width: 100%;
+  max-width: 21.2rem;
   padding: 1.4rem 3.23rem;
   font-size: 1.5rem;
   font-weight: $semiBold;  

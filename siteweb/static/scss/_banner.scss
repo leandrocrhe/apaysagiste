@@ -21,40 +21,44 @@
   background-repeat: no-repeat;
   background-size: cover;
 }
+
 .banner_100 {
-  height: 100vh;
+  height: 100dvh;
   min-height: 60.1rem;
   background-attachment: fixed;
 }
+
 .banner_40 {
-  height: 40vh;
+  min-height: 26rem;
+  height: 40dvmin;
   justify-content: flex-end;
   @include phone {
     justify-content: center;
-  }  
-  @include size615 {
-    .banner_title {
-      padding-top: 7rem;
-    }
-  }  
+  } 
   @include size850 {
     justify-content: center;
-    .banner_title {
-      padding-top: 0;
-    }
   }
 }
-// .banner_text {
-// }
+
 .banner_title{
+  padding-top: 5rem;
   font-size: calc(2.8rem + 1vw);
     @include size615 {
-    font-size: calc(3rem + 1vw);
-  }
+      padding-top: 7rem;
+      font-size: calc(3rem + 1vw);
+    }
+    @include size850 {
+      padding-top: 5rem;
+    }
 }
+
 .banner_subtitle {
   color: #fffd00 !important;
-  font-size: calc(1.5rem + 1vmin) !important;
+  font-size: calc(1rem + 1dvmin) !important;
   text-shadow: 1px 1px 5px #000;
   text-wrap: balance;
+
+  @include size930 {
+    font-size: 2.2rem !important;
+  }
 }

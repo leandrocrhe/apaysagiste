@@ -36,7 +36,7 @@ def home(request):
     services = Service.objects.all()
     testimonials = Testimonial.objects.all()
     
-    img_transformed_urls = [cloudinary.utils.cloudinary_url(img.banner.public_id, height=300, width=428, crop='crop', fetch_format='auto')[0] for img in services]
+    img_transformed_urls = [cloudinary.utils.cloudinary_url(img.banner.public_id, height=400, width=600, crop='crop', fetch_format='auto')[0] for img in services]
     
     # Combinando las listas para pasarlas a la plantilla
     services_img_urls = zip(services, img_transformed_urls)
@@ -52,7 +52,7 @@ def preview(request):
     homes = Home.objects.all()
     services = Service.objects.all()
     
-    img_transformed_urls = [cloudinary.utils.cloudinary_url(img.banner.public_id, height=300, width=428, crop='crop', fetch_format='auto')[0] for img in services]
+    img_transformed_urls = [cloudinary.utils.cloudinary_url(img.banner.public_id, height=400, width=600, crop='crop', fetch_format='auto')[0] for img in services]
     
     # Combinando las listas para pasarlas a la plantilla
     services_img_urls = zip(services, img_transformed_urls)

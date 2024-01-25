@@ -164,7 +164,7 @@ class Form(models.Model):
     
 class BannerPage(models.Model):
     title = models.CharField(max_length=50, default="Title Name")
-    subtitle = models.TextField(max_length=150, blank=True)
+    subtitle = models.TextField(max_length=210, blank=True)
     banner = CloudinaryField('banner', folder='banner', blank=True)
     identificador = models.CharField(max_length=20, blank=True)
     
@@ -172,7 +172,7 @@ BaseModel.register_pre_delete('banner')
     
     
 class ServiceLocation(models.Model):
-    text = models.CharField(max_length=60, default="Landscaping expert in downtown Quebec City")
+    text = models.CharField(max_length=80, default="Landscaping expert in downtown Quebec City")
     text_locations = models.TextField()
     
 

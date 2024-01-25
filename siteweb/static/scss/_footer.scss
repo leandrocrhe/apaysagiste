@@ -38,7 +38,7 @@
   align-items: center;
   color: $white1;
   width: 100%;
-  max-width: 21.2rem;
+  max-width: 23.2rem;
   min-height: 36rem;
   margin: 0 auto;
   padding: 5rem 0;
@@ -74,7 +74,9 @@
   height: calc(100% - 7.23rem);
 }
 .footer_text {
-  margin: 1rem 0 2rem 0;
+  font-stretch: semi-condensed;
+  margin: 1rem 0 0 0.8rem;
+  line-height: 2rem;
   p {
     font-size: 1.4rem;
   }

@@ -12,7 +12,6 @@ document.addEventListener('DOMContentLoaded', () => {
 window.addEventListener('scroll', () => {
   const services = document.querySelector('.observe');
   const mapServ = services.getBoundingClientRect();
-  console.log(mapServ)
   btnFloat.classList.toggle("btn_top-disabled", mapServ.top > -650);
 });
 
@@ -94,26 +93,3 @@ ScrollReveal().reveal('.flex2', {
 });
 
 ScrollReveal().reveal('.contact-container', {delay: 500});
-
-
-/*
-document.addEventListener('DOMContentLoaded', function(){
-  navFixed();
-});
-
-function navFixed() {
-
-  const navBar = document.querySelector('.nav_sm');
-
-  // Registrar Intersection Observer
-  const observer = new IntersectionObserver( function(entries) {
-    if(entries[0].isIntersecting) {
-      navBar.classList.remove('nav_sm-fixed');
-    } else {
-      navBar.classList.add('nav_sm-fixed');      
-    };
-  });
-  // Elemento a obserbar
-  observer.observe(document.querySelector('.observe'))
-}
-*/
