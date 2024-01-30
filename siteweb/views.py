@@ -200,7 +200,6 @@ def sendemail(request):
         cpostal = request.POST['cpostal']
         message = request.POST['message']
         email_from = settings.EMAIL_HOST_USER
-        # email_to = ['leandrocrhe@gmail.com']
         email_to = ['pavepuig@outlook.com']        
         
         html_message = f'<strong>Nombre del cliente:</strong> {name} {apellidos}<br>' \
