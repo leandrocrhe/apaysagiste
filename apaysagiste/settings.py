@@ -29,12 +29,13 @@ SECRET_KEY = os.environ.get('SECRET_KEY', default='your secret key')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 # Camiar entre Producción: True | Despliegue: False
-DEBUG = os.environ.get('DEBUG', 'True').lower() == 'true'
+# DEBUG = os.environ.get('DEBUG', 'True').lower() == 'true'
+DEBUG = os.environ.get('DEBUG', 'False').lower() == 'true'
 
 # Production
-ALLOWED_HOSTS = []
+# ALLOWED_HOSTS = []
 # Deployment
-# ALLOWED_HOSTS = os.environ.get('ALLOWED_HOSTS').split(' ')
+ALLOWED_HOSTS = os.environ.get('ALLOWED_HOSTS').split(' ')
 
 # RENDER_EXTERNAL_HOSTNAME = os.environ.get('RENDER_EXTERNAL_HOSTNAME')
 # if RENDER_EXTERNAL_HOSTNAME:
@@ -103,8 +104,8 @@ DATABASES = {
 }
 
 # # Deployment
-# database_url = os.environ.get('DATABASE_URL')
-# DATABASES['default'] = dj_database_url.parse(database_url)
+database_url = os.environ.get('DATABASE_URL')
+DATABASES['default'] = dj_database_url.parse(database_url)
 
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
