@@ -62,7 +62,9 @@
 
   .nav_link {
     &:hover {
-      background-color: rgba(37, 37, 37, 0.64);
+      @include size615 {
+        background-color: rgba(37, 37, 37, 0.64);
+      }
     }
   }
 
@@ -125,7 +127,9 @@
       @include size615 {
         transform: scale(1.05);
       }
-      background-color: rgba(0, 0, 0, 0.75);
+      @media (max-width: $size615) {
+        background-color: rgba(0, 0, 0, 0.75);
+      }
     }
   }
 }
@@ -152,11 +156,13 @@
   }
 }
 
-#services:target .nav_services {
-  max-height: 48.5rem;
-}
-#languages:target .languages {
-  max-height: 15rem;
+@media (max-width: $size615) {  
+  #services:target .nav_services {
+    max-height: 48.5rem;
+  }
+  #languages:target .languages {
+    max-height: 15rem;
+  }
 }
 
 .languages {

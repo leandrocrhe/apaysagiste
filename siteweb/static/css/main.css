@@ -1,13 +1,4 @@
 @charset "UTF-8";
-/* 
-                z-index:
-16:   nav:          16
-68:   btn_top       68
-123:  nav Samll:    2
-48:   home sevices  1
-62:   home sevices  1
-
-*/
 html {
   font-size: 62.5%;
   box-sizing: border-box;
@@ -78,7 +69,7 @@ img {
 .btn {
   text-align: center;
   width: 100%;
-  max-width: 21.2rem;
+  max-width: 21.5rem;
   padding: 1.4rem 3.23rem;
   font-size: 1.5rem;
   font-weight: 600;
@@ -236,8 +227,10 @@ img {
     backdrop-filter: blur(10px);
   }
 }
-.nav_menu .nav_link:hover {
-  background-color: rgba(37, 37, 37, 0.64);
+@media (min-width: 615px) {
+  .nav_menu .nav_link:hover {
+    background-color: rgba(37, 37, 37, 0.64);
+  }
 }
 .nav_menu .nav_link {
   position: relative;
@@ -287,12 +280,14 @@ img {
     background-color: transparent;
   }
 }
-.nav_menu-visible .nav_link-a:hover {
-  background-color: rgba(0, 0, 0, 0.75);
-}
 @media (min-width: 615px) {
   .nav_menu-visible .nav_link-a:hover {
     transform: scale(1.05);
+  }
+}
+@media (max-width: 615px) {
+  .nav_menu-visible .nav_link-a:hover {
+    background-color: rgba(0, 0, 0, 0.75);
   }
 }
 
@@ -317,14 +312,14 @@ img {
   box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.5);
 }
 
-#services:target .nav_services {
-  max-height: 48.5rem;
+@media (max-width: 615px) {
+  #services:target .nav_services {
+    max-height: 48.5rem;
+  }
+  #languages:target .languages {
+    max-height: 15rem;
+  }
 }
-
-#languages:target .languages {
-  max-height: 15rem;
-}
-
 .languages {
   width: 100%;
   min-width: 12.5rem;
